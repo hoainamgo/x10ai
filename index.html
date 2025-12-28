@@ -192,11 +192,48 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#home" data-t="nav_home" class="text-sm font-medium hover:text-primary transition">Home</a>
-                    <a href="#kits" data-t="nav_kits" class="text-sm font-medium hover:text-primary transition">Kits</a>
-                    <a href="#pricing" data-t="nav_pricing"
-                        class="text-sm font-medium hover:text-primary transition">Pricing</a>
-                    <a href="#guide" data-t="nav_guide"
-                        class="text-sm font-medium hover:text-primary transition">Guide</a>
+
+                    <!-- Products Dropdown -->
+                    <div class="relative group h-16 flex items-center">
+                        <button class="text-sm font-medium hover:text-primary transition flex items-center gap-1">
+                            <span data-t="nav_products">Products</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-12 left-0 w-64 bg-white border border-slate-100 shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 p-2 z-[60]">
+                            <a href="#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">YouTube Kit</span>
+                                <span class="text-xs text-slate-400">Viral Scripts & Thumbnails</span>
+                            </a>
+                            <a href="#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">TikTok Kit</span>
+                                <span class="text-xs text-slate-400">Trend Hunter & Scripts</span>
+                            </a>
+                            <a href="#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">Marketing Kit</span>
+                                <span class="text-xs text-slate-400">Campaigns & Copywriting</span>
+                            </a>
+                            <a href="#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">Engineer Kit</span>
+                                <span class="text-xs text-slate-400">Coding Pair-Programmer</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#blog" data-t="nav_blog" class="text-sm font-medium hover:text-primary transition">Blog</a>
+                    <a href="#community" data-t="nav_community"
+                        class="text-sm font-medium hover:text-primary transition">Community</a>
+                    <a href="#docs" data-t="nav_docs" class="text-sm font-medium hover:text-primary transition">Docs</a>
+                    <a href="#referrals" data-t="nav_referrals"
+                        class="text-sm font-medium hover:text-primary transition">Referrals</a>
 
                     <!-- Language Switcher -->
                     <div class="relative group ml-4">
@@ -709,372 +746,658 @@
         </div>
     </section>
 
-    <!-- Scripts -->
-    <script src="core_logic.js"></script>
-    <script>
-        // --- TRANSLATIONS DICTIONARY ---
-        const i18n = {
-            en: {
-                flag: '🇺🇸', name: 'EN',
-                nav_home: 'Home', nav_kits: 'Kits', nav_pricing: 'Pricing', nav_guide: 'Guide', nav_cta: 'Get Full Bundle',
-                hero_badge: 'v2.1.2 Released',
-                hero_title: '10x Your Productivity <br class="hidden md:block" /> with <span class="text-primary">Intelligent AI Kits</span>',
-                hero_subtitle: 'Specialized Agents & Workflows designed for YouTube, TikTok, Marketing, and Coding.',
-                btn_explore: 'Explore Kits', btn_demo: 'Watch Demo',
-                section_kits_title: 'The X10 Ecosystem', section_kits_subtitle: '5 Powerful Kits. 1 Goal: Unstoppable Growth.',
-                loading: 'Loading Kits...', get_it: 'Get it',
-                footer_copy: '© 2025 X10 Creator Kits. Global Edition. All rights reserved.',
-                // Features
-                feat_badge: 'Why Choose X10?', feat_title: 'Power-Packed Capabilities',
-                feat_1_title: 'YouTube Intelligence', feat_1_desc: 'Auto-generate high-retention scripts, catchy titles, and thumbnail concepts in seconds.',
-                feat_2_title: 'TikTok Viral Engine', feat_2_desc: 'Identify trending sounds and generate 60s hook-based scripts optimized for algorithm push.',
-                feat_3_title: 'Marketing CMO', feat_3_desc: 'Plan comprehensive campaigns, write AIDA copy, and analyze market trends like a pro.',
-                feat_4_title: 'Code Pair-Programmer', feat_4_desc: 'Build modern web apps with React, Tailwind, and Next.js agents that understand clean code.',
-                feat_5_title: 'Global Localization', feat_5_desc: 'Expand your reach with native-quality content generation in EN, JP, KR, and VN.',
-                feat_6_title: 'Auto-Store Sync', feat_6_desc: 'Seamlessly connect with Blogger and Gumroad to automate your digital product sales.',
-                // Comparison
-                comp_title: 'The X10 Advantage', comp_h_feat: 'Features', comp_h_old: 'Traditional Way', comp_h_new: 'X10 Workflow',
-                comp_r1_1: 'Creation Speed', comp_r1_2: 'Hours / Days', comp_r1_3: 'Seconds',
-                comp_r2_1: 'Language Support', comp_r2_2: 'Manual Translation', comp_r2_3: 'EN, JP, KR, VN Native',
-                comp_r3_1: 'Cost Efficiency', comp_r3_2: 'Expensive Freelancers', comp_r3_3: '~ $29 One-time',
-                comp_r4_1: 'Customization', comp_r4_2: 'Generic Templates', comp_r4_3: 'Tailored Agents',
-                // Pricing
-                price_title: 'Simple, Transparent Pricing', price_sub: 'Pay once, own it forever. No monthly fees.',
-                price_ind_title: 'Individual Kits', price_ind_desc: 'Perfect for focused creators starting their journey.',
-                price_feat_1: 'Lifetime License', price_feat_2: 'All Basic Features', price_feat_3: 'Free Updates (v2.x)', price_btn_browse: 'Browse Kits',
-                price_bundle_title: 'Full X10 Bundle', price_bundle_desc: 'Get all 5 kits and become a content powerhouse.',
-                price_feat_bundle_1: 'All 5 Premium Kits', price_feat_bundle_2: 'Priority Support', price_feat_bundle_3: 'Exclusive Bonus Prompts', price_btn_get: 'Get Full Access',
-                // FAQ
-                faq_title: 'Frequently Asked Questions',
-                faq_q1: 'How do I receive the product?', faq_a1: 'After purchase via Gumroad, you will instantly receive a ZIP file containing the Kit and a License Key. You can use it immediately.',
-                faq_q2: 'Do I need an API Key?', faq_a2: 'Yes, X10 Kits run on the Claude/OpenAI platform, so you will need your own API Key to generate content. The cost is minimal for individual use.',
-                faq_q3: 'Can I use this for client work?', faq_a3: 'Absolutely! The Commercial License allows you to use the output (scripts, code, strategies) for your clients or your own business without restriction.'
-            },
-            ja: {
-                flag: '🇯🇵', name: 'JP',
-                nav_home: 'ホーム', nav_kits: 'キット', nav_pricing: '料金', nav_guide: 'ガイド', nav_cta: '全セット入手',
-                hero_badge: 'v2.1.2 リリース',
-                hero_title: 'AIキットで生産性を10倍に <br class="hidden md:block" /> <span class="text-primary">次世代のワークフロー</span>',
-                hero_subtitle: 'YouTube、TikTok、マーケティング、コーディングに特化した専用エージェント。',
-                btn_explore: 'キットを見る', btn_demo: 'デモを見る',
-                section_kits_title: 'X10 エコシステム', section_kits_subtitle: '5つの強力なキット。成長を加速させる。',
-                loading: '読み込み中...', get_it: '入手する',
-                footer_copy: '© 2025 X10 Creator Kits. 日本語版。',
-                feat_badge: 'X10を選ぶ理由', feat_title: '強力な機能群',
-                feat_1_title: 'YouTube インテリジェンス', feat_1_desc: '高視聴維持率の台本、魅力的なタイトル、サムネイル案を数秒で生成。',
-                feat_2_title: 'TikTok バイラルエンジン', feat_2_desc: 'トレンド音源を特定し、アルゴリズムに最適化された60秒台本を生成。',
-                feat_3_title: 'マーケティング CMO', feat_3_desc: '包括的なキャンペーン計画、AIDAコピーライティング、市場トレンド分析。',
-                feat_4_title: 'コードペアプログラマー', feat_4_desc: 'React、Tailwind、Next.jsを理解するエージェントと最新のWebアプリを構築。',
-                feat_5_title: 'グローバルローカライズ', feat_5_desc: 'EN、JP、KR、VNのネイティブ品質コンテンツ生成で市場を拡大。',
-                feat_6_title: '自動ストア同期', feat_6_desc: 'BloggerとGumroadをシームレスに接続し、デジタル製品販売を自動化。',
-                comp_title: 'X10のアドバンテージ', comp_h_feat: '機能', comp_h_old: '従来ての方法', comp_h_new: 'X10 ワークフロー',
-                comp_r1_1: '作成スピード', comp_r1_2: '数時間 / 数日', comp_r1_3: '数秒',
-                comp_r2_1: '言語サポート', comp_r2_2: '手動翻訳', comp_r2_3: 'EN, JP, KR, VN ネイティブ',
-                comp_r3_1: 'コスト効率', comp_r3_2: '高額なフリーランス', comp_r3_3: '~ $29 (買い切り)',
-                comp_r4_1: 'カスタマイズ', comp_r4_2: '一般的なテンプレート', comp_r4_3: '特化型エージェント',
-                price_title: 'シンプルで透明な価格設定', price_sub: '一度払えばずっと使えます。月額料金はありません。',
-                price_ind_title: '個別キット', price_ind_desc: '特定の目的を持つクリエイターに最適。',
-                price_feat_1: 'ライフタイムライセンス', price_feat_2: '基本機能をすべて含む', price_feat_3: '無料アップデート (v2.x)', price_btn_browse: 'キットを見る',
-                price_bundle_title: 'X10 フルバンドル', price_bundle_desc: '5つのキットすべてを入手してコンテンツ制作を強化。',
-                price_feat_bundle_1: '全5つのプレミアムキット', price_feat_bundle_2: '優先サポート', price_feat_bundle_3: '独占ボーナスプロンプト', price_btn_get: 'フルアクセスを入手',
-                faq_title: 'よくある質問',
-                faq_q1: '製品はどのように受け取りますか？', faq_a1: 'Gumroadで購入後、すぐにキットとライセンスキーが含まれたZIPファイルを受け取れます。',
-                faq_q2: 'APIキーは必要ですか？', faq_a2: 'はい、X10キットはClaude/OpenAIプラットフォーム上で動作するため、ご自身のAPIキーが必要です。コストは最小限です。',
-                faq_q3: 'クライアントワークに使用できますか？', faq_a3: 'もちろんです！商用ライセンスにより、クライアントや自社ビジネスのために自由に成果物を使用できます。'
-            },
-            ko: {
-                flag: '🇰🇷', name: 'KR',
-                nav_home: '홈', nav_kits: '키트', nav_pricing: '가격', nav_guide: '가이드', nav_cta: '전체 번들 구매',
-                hero_badge: 'v2.1.2 출시',
-                hero_title: 'AI 키트로 <span class="text-primary">생산성 10배 향상</span> <br class="hidden md:block" /> 창작자를 위한 혁신',
-                hero_subtitle: 'YouTube, TikTok, 마케팅, 코딩을 위한 맞춤형 에이전트 및 워크플로우.',
-                btn_explore: '키트 탐색', btn_demo: '데모 보기',
-                section_kits_title: 'X10 에코시스템', section_kits_subtitle: '5가지 강력한 키트. 끊임없는 성장.',
-                loading: '로딩 중...', get_it: '구매하기',
-                footer_copy: '© 2025 X10 Creator Kits. 한국어판.',
-                feat_badge: '왜 X10인가?', feat_title: '강력한 기능 모음',
-                feat_1_title: 'YouTube 인텔리전스', feat_1_desc: '높은 유지율의 대본, 눈길을 끄는 제목, 썸네일 컨셉을 몇 초 만에 생성.',
-                feat_2_title: 'TikTok 바이럴 엔진', feat_2_desc: '트렌딩 사운드를 식별하고 알고리즘에 최적화된 60초 훅 기반 대본 생성.',
-                feat_3_title: '마케팅 CMO', feat_3_desc: '종합적인 캠페인 계획, AIDA 카피라이팅, 시장 트렌드 분석을 전문가처럼 수행.',
-                feat_4_title: '코드 페어 프로그래머', feat_4_desc: '클린 코드를 이해하는 React, Tailwind, Next.js 에이전트로 최신 웹 앱 구축.',
-                feat_5_title: '글로벌 로컬라이제이션', feat_5_desc: 'EN, JP, KR, VN의 원어민 수준 콘텐츠 생성으로 시장 확대.',
-                feat_6_title: '자동 스토어 동기화', feat_6_desc: 'Blogger 및 Gumroad와 원활하게 연결하여 디지털 제품 판매 자동화.',
-                comp_title: 'X10의 장점', comp_h_feat: '기능', comp_h_old: '기존 방식', comp_h_new: 'X10 워크플로우',
-                comp_r1_1: '제작 속도', comp_r1_2: '수 시간 / 수 일', comp_r1_3: '단 몇 초',
-                comp_r2_1: '언어 지원', comp_r2_2: '수동 번역', comp_r2_3: 'EN, JP, KR, VN 원어민급',
-                comp_r3_1: '비용 효율성', comp_r3_2: '비싼 프리랜서', comp_r3_3: '~ $29 (일회성)',
-                comp_r4_1: '최적화', comp_r4_2: '일반 템플릿', comp_r4_3: '맞춤형 에이전트',
-                price_title: '단순하고 투명한 가격', price_sub: '한 번 결제로 평생 소유. 월 사용료 없음.',
-                price_ind_title: '개별 키트', price_ind_desc: '특정 목적을 가진 크리에이터에게 최적.',
-                price_feat_1: '평생 라이선스', price_feat_2: '모든 기본 기능', price_feat_3: '무료 업데이트 (v2.x)', price_btn_browse: '키트 보기',
-                price_bundle_title: 'X10 풀 번들', price_bundle_desc: '5가지 키트를 모두 확보하여 콘텐츠 제작 역량 강화.',
-                price_feat_bundle_1: '모든 5개 프리미엄 키트', price_feat_bundle_2: '우선 지원', price_feat_bundle_3: '독점 보너스 프롬프트', price_btn_get: '전체 액세스',
-                faq_title: '자주 묻는 질문',
-                faq_q1: '제품은 어떻게 받나요?', faq_a1: 'Gumroad 결제 후 즉시 키트와 라이선스 키가 포함된 ZIP 파일을 받게 됩니다.',
-                faq_q2: 'API 키가 필요한가요?', faq_a2: '네, X10 키트는 Claude/OpenAI 플랫폼에서 실행되므로 고유 API 키가 필요합니다. 비용은 매우 저렴합니다.',
-                faq_q3: '클라이언트 작업에 사용할 수 있나요?', faq_a3: '물론입니다! 상업용 라이선스를 통해 클라이언트나 비즈니스를 위해 결과물을 자유롭게 사용할 수 있습니다.'
-            },
-            vi: {
-                flag: '🇻🇳', name: 'VI',
-                nav_home: 'Trang chủ', nav_kits: 'Bộ Kit', nav_pricing: 'Giá bán', nav_guide: 'Hướng dẫn', nav_cta: 'Mua Trọn Bộ',
-                hero_badge: 'Đã ra mắt v2.1.2',
-                hero_title: 'X10 Năng suất làm việc <br class="hidden md:block" /> với <span class="text-primary">Bộ AI Kit Thông minh</span>',
-                hero_subtitle: 'Agent & Workflow chuyên dụng cho YouTube, TikTok, Marketing và Lập trình.',
-                btn_explore: 'Khám phá ngay', btn_demo: 'Xem Demo',
-                section_kits_title: 'Hệ sinh thái X10', section_kits_subtitle: '5 Bộ Kit mạnh mẽ. 1 Mục tiêu: Tăng trưởng bứt phá.',
-                loading: 'Đang tải danh sách...', get_it: 'Mua ngay',
-                footer_copy: '© 2025 X10 Creator Kits. Phiên bản Việt Nam.',
-                feat_badge: 'Tại sao chọn X10?', feat_title: 'Tính năng Mạnh mẽ',
-                feat_1_title: 'YouTube Intelligence', feat_1_desc: 'Tự động tạo kịch bản, tiêu đề hấp dẫn và ý tưởng thumbnail chỉ trong vài giây.',
-                feat_2_title: 'TikTok Viral Engine', feat_2_desc: 'Xác định âm thanh xu hướng và tạo kịch bản 60 giây tối ưu cho thuật toán.',
-                feat_3_title: 'Marketing CMO', feat_3_desc: 'Lập kế hoạch chiến dịch, viết nội dung AIDA quảng cáo và phân tích thị trường.',
-                feat_4_title: 'Code Pair-Programmer', feat_4_desc: 'Xây dựng web với React, Tailwind và Next.js. AI viết code sạch và tối ưu.',
-                feat_5_title: 'Toàn cầu hóa (Global)', feat_5_desc: 'Mở rộng thị trường với nội dung chuẩn bản xứ cho EN, JP, KR và VN.',
-                feat_6_title: 'Đồng bộ Store Tự động', feat_6_desc: 'Kết nối Blogger và Gumroad để tự động hóa quy trình bán hàng digital.',
-                comp_title: 'Lợi thế X10', comp_h_feat: 'Tính năng', comp_h_old: 'Cách cũ', comp_h_new: 'Cách của X10',
-                comp_r1_1: 'Tốc độ tạo', comp_r1_2: 'Hàng giờ / Ngày', comp_r1_3: 'Vài giây',
-                comp_r2_1: 'Đa ngôn ngữ', comp_r2_2: 'Dịch thủ công', comp_r2_3: 'Bản xứ EN, JP, KR, VN',
-                comp_r3_1: 'Hiệu quả chi phí', comp_r3_2: 'Thuê ngoài đắt đỏ', comp_r3_3: '~ $29 (Mua 1 lần)',
-                comp_r4_1: 'Tùy biến', comp_r4_2: 'Mẫu chung chung', comp_r4_3: 'Agent chuyên biệt',
-                price_title: 'Bảng giá Đơn giản', price_sub: 'Thanh toán 1 lần, sở hữu trọn đời. Không phí hàng tháng.',
-                price_ind_title: 'Bộ Kit Lẻ', price_ind_desc: 'Dành cho người mới bắt đầu tập trung vào 1 mảng.',
-                price_feat_1: 'Bản quyền trọn đời', price_feat_2: 'Tính năng cơ bản', price_feat_3: 'Update miễn phí (v2.x)', price_btn_browse: 'Xem các Kit',
-                price_bundle_title: 'Trọn bộ X10 Bundle', price_bundle_desc: 'Sở hữu cả 5 bộ Kit để trở thành Content Master.',
-                price_feat_bundle_1: 'Cả 5 Premium Kits', price_feat_bundle_2: 'Hỗ trợ ưu tiên', price_feat_bundle_3: 'Tặng kèm Prompts', price_btn_get: 'Mua Trọn Bộ',
-                faq_title: 'Câu hỏi thường gặp',
-                faq_q1: 'Tôi nhận sản phẩm thế nào?', faq_a1: 'Sau khi thanh toán qua Gumroad, bạn nhận ngay file ZIP chứa Kit và License Key.',
-                faq_q2: 'Tôi có cần API Key không?', faq_a2: 'Có, X10 Kits chạy trên nền tảng Claude/OpenAI nên bạn cần API Key riêng. Chi phí rất rẻ.',
-                faq_q3: 'Dùng cho khách hàng được không?', faq_a3: 'Thoải mái! License cho phép bạn dùng thành phẩm để bán dịch vụ cho khách hàng.'
-            }
-        };
+    </section>
 
-        let currentLang = 'en';
+    <!-- Blog Section (Dynamic) -->
+    <section id="blog" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-t="blog_title" class="text-3xl font-bold text-slate-900 sm:text-4xl">Latest from Blog</h2>
+                <p data-t="blog_subtitle" class="mt-4 text-lg text-slate-600">Insights, updates, and tutorials from the
+                    team.</p>
+            </div>
 
-        // --- STATIC DATA ---
-        const STATIC_KITS = [
-            {
-                title: "YouTube Kit",
-                desc: "Dominate YouTube with AI agents that generate high-retention scripts, eye-catching thumbnails, and SEO-optimized titles. Includes 3 unique agents.",
-                icon: "📺",
-                price: "$29",
-                tag: "Best Seller",
-                color: "bg-red-100 text-red-600",
-                link: "https://ksmartcomes.gumroad.com/l/youtube-kit" // Replace with actual product link
-            },
-            {
-                title: "TikTok Kit",
-                desc: "Go viral faster. Analyze trends, generate 60s hook-heavy scripts, and find the perfect audio for your next TikTok or Reel.",
-                icon: "🎵",
-                price: "$19",
-                tag: "Trending",
-                color: "bg-pink-100 text-pink-600",
-                link: "https://ksmartcomes.gumroad.com/l/tiktok-kit"
-            },
-            {
-                title: "Marketing Kit",
-                desc: "Your virtual CMO. Plan campaigns, write persuasive copy (AIDA, PAS), and analyze competitors effortlessly.",
-                icon: "🚀",
-                price: "$39",
-                tag: "Essential",
-                color: "bg-blue-100 text-blue-600",
-                link: "https://ksmartcomes.gumroad.com/l/marketing-kit"
-            },
-            {
-                title: "Engineer Kit",
-                desc: "Code 10x faster. A pair programmer that knows React, Tailwind, and Clean Code principles. Generates full components.",
-                icon: "💻",
-                price: "$49",
-                tag: "Pro Choice",
-                color: "bg-indigo-100 text-indigo-600",
-                link: "https://ksmartcomes.gumroad.com/l/engineer-kit"
-            },
-            {
-                title: "Brand Kit",
-                desc: "Build a memorable personal brand. Define your voice, create a content calendar, and engage your audience consistently.",
-                icon: "🌟",
-                price: "$25",
-                tag: "New",
-                color: "bg-yellow-100 text-yellow-600",
-                link: "https://ksmartcomes.gumroad.com/l/brand-kit"
-            }
-        ];
+            <!-- Loading State -->
+            <div id="loading-blog" class="text-center py-12">
+                <div
+                    class="inline-block w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin">
+                </div>
+            </div>
 
-        // --- DEMO CONTENT DATA ---
-        const DEMO_DATA = {
-            youtube: {
-                agent: "@agent_youtube (Claude 3.5 Sonnet)",
-                messages: [
-                    { role: 'user', text: "Tôi muốn làm video về 'Cách học AI cho người mới'. Hãy viết giúp tôi Hook 15s đầu tiên." },
-                    { role: 'ai', text: "Tuyệt vời. Đây là 3 phương án Hook giữ chân người xem cao nhất:\n\n**Option 1 (Fear Of Missing Out):**\n'Nếu bạn nghĩ học AI cần phải biết code, bạn đang mất đi cơ hội kiếm tiền lớn nhất năm 2025. Đây là lộ trình 3 bước dành cho người không biết gì về công nghệ...'\n\n**Option 2 (Authority):**\n'Tôi đã giúp 500 người từ con số 0 trở thành chuyên gia Prompt Engineering chỉ trong 30 ngày. Bí mật không nằm ở công cụ, mà nằm ở tư duy này...'\n\n**Option 3 (Curiosity):**\n'Đừng học Python. Đừng học Machine Learning. Nếu bạn muốn dùng AI để tăng hiệu suất x10 lần ngay lập tức, hãy bắt đầu từ thứ mà 90% mọi người đang bỏ qua...'" }
-                ]
-            },
-            tiktok: {
-                agent: "@agent_tiktok (Claude 3.5 Haiku)",
-                messages: [
-                    { role: 'user', text: "Tìm cho tôi 1 trend đang hot và viết kịch bản biến tôi thành chuyên gia trong trend đó." },
-                    { role: 'ai', text: "**Trend Detected:** 'Silent Review' (Review không nói, chỉ dùng biểu cảm ASMR).\n\n**Kịch bản 60s:**\n[0-5s] (Hình ảnh bạn cầm 1 cuốn sách về AI, mặt rất nghiêm trọng. Âm thanh: tiếng lật trang sách 'Roẹt')\n[5-15s] (Bạn gõ phím máy tính cực nhanh, mắt sáng lên như tìm ra chân lý. Hiệu ứng âm thanh: Tiếng gõ phím cơ 'Tách tách tách')\n[15-30s] (Show màn hình kết quả Claude viết code xong trong 30s. Bạn nhếch mép cười, giơ ngón tay cái 👍)\n[30-45s] (Text hiện lên màn hình: 'Tại sao phải code 8 tiếng khi AI làm trong 30s? Link bio để lấy Prompts'. Nhạc nền: Trending upbeat phonk)\n\n**Hashtag:** #AI #LearnOnTikTok #SilentReview #Productivity" }
-                ]
-            },
-            marketing: {
-                agent: "@agent_marketing (Claude 3.5 Sonnet)",
-                messages: [
-                    { role: 'user', text: "Phân tích đối thủ X và đưa ra chiến lược USP." },
-                    { role: 'ai', text: "**Phân tích nhanh:** Đối thủ X đang tập trung vào 'Giá rẻ' và 'Nhanh'. Điểm yếu của họ là 'Chất lượng nội dung chung chung (Generic)'.\n\n**Chiến lược USP cho bạn:** 'Hyper-Personalization' (Cá nhân hóa tột độ).\n\n**Tagline đề xuất:** 'Không chỉ viết nhanh, X10 viết như chính BẠN.'\n\n**Kế hoạch hành động:**\n1. Tạo chiến dịch so sánh: 'Bài viết 0.5$ (Đối thủ) vs Bài viết X10 (Có hồn)'.\n2. Đánh vào nỗi đau: 'Khách hàng chán ngấy nội dung rác do AI viết vội. Họ cần sự sâu sắc.'\n3. Offer: Dùng thử agent 'Personal Brand' để clone giọng văn của chính mình." }
-                ]
-            },
-            code: {
-                agent: "@agent_engineer (Claude 3.5 Sonnet)",
-                messages: [
-                    { role: 'user', text: "Tạo một Component Card sản phẩm bằng React + Tailwind, có hiệu ứng hover glassmorphism." },
-                    { role: 'ai', text: "Đây là component React 100% clean code, copy-paste là chạy:\n\n```jsx\nexport default function ProductCard({ title, price }) {\n  return (\n    <div className=\"group relative p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]\">\n      <div className=\"h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500\" />\n      <h3 className=\"text-xl font-bold text-white mb-2\">{title}</h3>\n      <div className=\"flex justify-between items-center\">\n         <span className=\"text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600\">{price}</span>\n         <button className=\"px-4 py-2 rounded-lg bg-white text-purple-900 font-bold hover:bg-purple-100\">Buy Now</button>\n      </div>\n    </div>\n  );\n}\n```" }
-                ]
-            }
-        };
+            <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog cards injected here -->
+            </div>
+        </div>
+    </section>
 
-        let currentTypeTimeout;
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="w-20 h-20 mx-auto bg-purple-100 rounded-full flex items-center justify-center text-4xl mb-6">🤝
+            </div>
+            <h2 data-t="comm_title" class="text-3xl font-bold text-slate-900 mb-4">Join the Community</h2>
+            <p data-t="comm_desc" class="text-slate-600 text-lg mb-8">Connect with 500+ creators, share your workflows,
+                and get direct support from the developers.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://discord.gg/placeholder"
+                    class="bg-[#5865F2] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#4752c4] transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 3.16 3.16 0 0 0-.585 1.205 19.38 19.38 0 0 0-5.59 0 3.303 3.303 0 0 0-.57-1.205.079.079 0 0 0-.087-.035 19.713 19.713 0 0 0-4.825 1.493.072.072 0 0 0-.03.027C2.054 9.172 1.353 13.86.96 18.525a.083.083 0 0 0 .034.077 19.782 19.782 0 0 0 5.923 2.946.075.075 0 0 0 .083-.028 3.998 3.998 0 0 0 1.258-2.02.067.067 0 0 0-.036-.073 12.871 12.871 0 0 1-1.785-.85.074.074 0 0 1-.006-.118c.36-.266.713-.548 1.045-.845a.057.057 0 0 1 .061-.008c2.476 1.127 5.163 1.127 7.6 0a.058.058 0 0 1 .062.008 19.743 19.743 0 0 1 1.05.852.074.074 0 0 1-.004.116 12.446 12.446 0 0 1-1.777.843.061.061 0 0 0-.035.072 4.026 4.026 0 0 0 1.253 2.035.075.075 0 0 0 .084.027 19.832 19.832 0 0 0 5.94-2.956.077.077 0 0 0 .033-.076c-.347-4.113-1.636-8.243-5.322-13.067a.066.066 0 0 0-.031-.027ZM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418Z" />
+                    </svg>
+                    Join Discord
+                </a>
+                <a href="#"
+                    class="bg-black text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">Follow on
+                    X</a>
+            </div>
+        </div>
+    </section>
 
-        function switchTab(tabId) {
-            // Update UI
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${tabId}`).classList.add('active');
+    <!-- Docs Section -->
+    <section id="docs" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6">📚
+            </div>
+            <h2 data-t="docs_title" class="text-3xl font-bold text-slate-900 mb-4">Documentation</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                <a href="#"
+                    class="block p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition text-left group">
+                    <span class="text-primary font-bold block mb-2 group-hover:translate-x-1 transition">Getting Started
+                        →</span>
+                    <span class="text-slate-600 text-sm">Installation, setup, and first steps.</span>
+                </a>
+                <a href="#"
+                    class="block p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition text-left group">
+                    <span class="text-primary font-bold block mb-2 group-hover:translate-x-1 transition">API Reference
+                        →</span>
+                    <span class="text-slate-600 text-sm">Detailed commands and configuration.</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-            // Clear content
-            document.getElementById('demo-content').innerHTML = '';
-            document.getElementById('demo-agent-name').innerText = DEMO_DATA[tabId].agent;
+    <!-- Referrals Section -->
+    <section id="referrals" class="py-20 bg-primary overflow-hidden relative">
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10 text-white">
+            <h2 data-t="ref_title" class="text-4xl font-extrabold mb-6">Earn 30% Commission</h2>
+            <p data-t="ref_desc" class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Love using X10? Refer other
+                creators and earn recurring revenue. We handle the tracking, you get the cash.</p>
+            <a href="https://ksmartcomes.gumroad.com/affiliates" target="_blank"
+                class="inline-block bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:bg-slate-50 hover:scale-105 transition">Become
+                a Partner</a>
+        </div>
+    </section>
 
-            // Start Typing Simulation
-            simulateChat(DEMO_DATA[tabId].messages);
-        }
+    // --- BLOG LOGIC ---
+    const BLOG_URL = 'https://ksmartcomes.blogspot.com';
 
-        async function simulateChat(messages) {
-            clearTimeout(currentTypeTimeout);
-            const container = document.getElementById('demo-content');
+    async function loadBlog() {
+    const container = document.getElementById('blog-container');
+    const loader = document.getElementById('loading-blog');
 
-            for (let msg of messages) {
-                // Formatting
-                let fmtText = msg.text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    try {
+    // Fetch recent posts (excluding standard product pages if possible, but here we show all)
+    const entries = await BloggerCore.fetchFeed(BLOG_URL, 3); // Get latest 3 posts
 
-                // Add Typing Bubble
-                const typingDiv = document.createElement('div');
-                typingDiv.className = `chat-bubble ${msg.role === 'user' ? 'chat-user' : 'chat-ai'} w-16`;
-                typingDiv.innerHTML = `<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>`;
-                container.appendChild(typingDiv);
-                container.scrollTop = container.scrollHeight;
+    if (loader) loader.style.display = 'none';
 
-                await new Promise(r => currentTypeTimeout = setTimeout(r, 800)); // Fake processing delay
+    if (entries.length === 0) {
+    container.innerHTML = `<p class="col-span-full text-center text-slate-500">No recent updates.</p>`;
+    return;
+    }
 
-                // Remove typing, add real message
-                typingDiv.remove();
+    container.innerHTML = '';
+    entries.forEach(entry => {
+    const title = entry.title.$t;
+    const link = entry.link.find(l => l.rel === 'alternate').href;
+    // Try to find an image
+    let imgHtml = '';
+    const content = entry.content.$t;
+    const imgUrl = BloggerCore.extractFirstImage(content);
+    if (imgUrl) {
+    imgHtml = `<div class="h-48 overflow-hidden"><img src="${imgUrl}" alt="${title}"
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>`;
+    } else {
+    imgHtml = `<div class="h-48 bg-slate-100 flex items-center justify-center text-4xl">📰</div>`;
+    }
 
-                const msgDiv = document.createElement('div');
-                msgDiv.className = `chat-bubble ${msg.role === 'user' ? 'chat-user' : 'chat-ai'} opacity-0 animate-[fade-in_0.3s_ease-out_forwards]`;
-                msgDiv.innerHTML = fmtText;
-                // Simple animation hack
-                msgDiv.style.animation = "fadeIn 0.5s forwards";
+    const date = new Date(entry.published.$t).toLocaleDateString();
+    const snippet = BloggerCore.extractDescription(content, entry.summary?.$t, 120);
 
-                container.appendChild(msgDiv);
-                container.scrollTop = container.scrollHeight;
+    const card = document.createElement('a');
+    card.href = link;
+    card.target = "_blank";
+    card.className = "group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition flex
+    flex-col";
+    card.innerHTML = `
+    ${imgHtml}
+    <div class="p-6 flex-1 flex flex-col">
+        <span class="text-xs font-semibold text-slate-400 mb-2">${date}</span>
+        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition line-clamp-2">${title}</h3>
+        <p class="text-slate-500 text-sm flex-1 mb-4 line-clamp-3">${snippet}</p>
+        <span class="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Read
+            Article →</span>
+    </div>
+    `;
+    container.appendChild(card);
+    });
+    } catch (e) {
+    console.error(e);
+    if (loader) loader.innerHTML = `<p class="text-red-500">Failed to load blog updates.</p>`;
+    }
+    }
 
-                await new Promise(r => currentTypeTimeout = setTimeout(r, msg.role === 'user' ? 500 : 1500)); // Read delay
-            }
-        }
+    // --- I18N DICTIONARY UPDATE ---
+    // (Merging with existing keys logic - simpler to just append/overwrite the i18n object initialization if I could,
+    but I'll update the variable)
+    // Since we are replacing the logic block, we redefine i18n here.
 
-        // --- I18N LOGIC ---
-        function setLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('x10_lang', lang);
+    const i18n = {
+    en: {
+    flag: '🇺🇸', name: 'EN',
+    nav_home: 'Home', nav_products: 'Products', nav_blog: 'Blog', nav_community: 'Community', nav_docs: 'Docs',
+    nav_referrals: 'Referrals', nav_cta: 'Get Full Bundle',
+    hero_badge: 'v2.1.2 Released',
+    hero_title: '10x Your Productivity <br class="hidden md:block" /> with <span class="text-primary">Intelligent AI
+        Kits</span>',
+    hero_subtitle: 'Specialized Agents & Workflows designed for YouTube, TikTok, Marketing, and Coding.',
+    btn_explore: 'Explore Kits', btn_demo: 'Watch Demo',
+    section_kits_title: 'The X10 Ecosystem', section_kits_subtitle: '5 Powerful Kits. 1 Goal: Unstoppable Growth.',
+    loading: 'Loading Kits...', get_it: 'Get it',
+    footer_copy: '© 2025 X10 Creator Kits. Global Edition. All rights reserved.',
 
-            // Update static elements
-            document.querySelectorAll('[data-t]').forEach(el => {
-                const key = el.getAttribute('data-t');
-                if (i18n[lang][key]) {
-                    el.innerHTML = i18n[lang][key];
-                }
-            });
+    // Features
+    feat_badge: 'Why Choose X10?', feat_title: 'Power-Packed Capabilities',
+    feat_1_title: 'YouTube Intelligence', feat_1_desc: 'Auto-generate high-retention scripts, catchy titles, and
+    thumbnail concepts in seconds.',
+    feat_2_title: 'TikTok Viral Engine', feat_2_desc: 'Identify trending sounds and generate 60s hook-based scripts
+    optimized for algorithm push.',
+    feat_3_title: 'Marketing CMO', feat_3_desc: 'Plan comprehensive campaigns, write AIDA copy, and analyze market
+    trends like a pro.',
+    feat_4_title: 'Code Pair-Programmer', feat_4_desc: 'Build modern web apps with React, Tailwind, and Next.js agents
+    that understand clean code.',
+    feat_5_title: 'Global Localization', feat_5_desc: 'Expand your reach with native-quality content generation in EN,
+    JP, KR, and VN.',
+    feat_6_title: 'Auto-Store Sync', feat_6_desc: 'Seamlessly connect with Blogger and Gumroad to automate your digital
+    product sales.',
 
-            // Special handling for HTML titles (rich text)
-            if (document.getElementById('hero-title')) {
-                document.getElementById('hero-title').innerHTML = i18n[lang].hero_title;
-            }
+    // Deep Dive & How It Works
+    dive_title: 'See the Agents in Action', dive_subtitle: "Don't just take our word for it. See the actual raw
+    output.",
+    hiw_title: 'From Zero to Publish in 3 Steps',
+    hiw_s1_title: '1. Get the Kit', hiw_s1_desc: 'Download the zip, activate your license key. No monthly
+    subscriptions.',
+    hiw_s2_title: '2. Run the Agent', hiw_s2_desc: 'Paste your idea. The agent researches, writes, and optimizes
+    everything.',
+    hiw_s3_title: '3. Publish & Profit', hiw_s3_desc: 'Upload the script, code, or copy. Watch your engagement soar.',
 
-            // Update Switcher UI
-            document.getElementById('current-flag').innerText = i18n[lang].flag;
-            document.getElementById('current-lang-name').innerText = i18n[lang].name;
+    // Comparison
+    comp_title: 'The X10 Advantage', comp_h_feat: 'Features', comp_h_old: 'Traditional Way', comp_h_new: 'X10 Workflow',
+    comp_r1_1: 'Creation Speed', comp_r1_2: 'Hours / Days', comp_r1_3: 'Seconds',
+    comp_r2_1: 'Language Support', comp_r2_2: 'Manual Translation', comp_r2_3: 'EN, JP, KR, VN Native',
+    comp_r3_1: 'Cost Efficiency', comp_r3_2: 'Expensive Freelancers', comp_r3_3: '~ $29 One-time',
+    comp_r4_1: 'Customization', comp_r4_2: 'Generic Templates', comp_r4_3: 'Tailored Agents',
 
-            // Re-render kits to update "Get it" button and loading text
-            renderKits();
-        }
+    // Testimonials
+    testi_title: 'What Creators are Saying', testi_subtitle: 'Join 150+ creators who upgraded their workflow.',
 
-        async function detectLanguage() {
-            // Priority: 1. LocalStorage, 2. IP Geo (optional feature), 3. Browser Locale
-            const saved = localStorage.getItem('x10_lang');
-            if (saved) return setLanguage(saved);
+    // Pricing
+    price_title: 'Simple, Transparent Pricing', price_sub: 'Pay once, own it forever. No monthly fees.',
+    price_ind_title: 'Individual Kits', price_ind_desc: 'Perfect for focused creators starting their journey.',
+    price_feat_1: 'Lifetime License', price_feat_2: 'All Basic Features', price_feat_3: 'Free Updates (v2.x)',
+    price_btn_browse: 'Browse Kits',
+    price_bundle_title: 'Full X10 Bundle', price_bundle_desc: 'Get all 5 kits and become a content powerhouse.',
+    price_feat_bundle_1: 'All 5 Premium Kits', price_feat_bundle_2: 'Priority Support', price_feat_bundle_3: 'Exclusive
+    Bonus Prompts', price_btn_get: 'Get Full Access',
 
-            try {
-                // Quick IP Check (Free & Fast)
-                const res = await fetch('https://ipapi.co/json/');
-                const data = await res.json();
-                const country = data.country_code;
+    // FAQ
+    faq_title: 'Frequently Asked Questions',
+    faq_q1: 'How do I receive the product?', faq_a1: 'After purchase via Gumroad, you will instantly receive a ZIP file
+    containing the Kit and a License Key. You can use it immediately.',
+    faq_q2: 'Do I need an API Key?', faq_a2: 'Yes, X10 Kits run on the Claude/OpenAI platform, so you will need your own
+    API Key to generate content. The cost is minimal for individual use.',
+    faq_q3: 'Can I use this for client work?', faq_a3: 'Absolutely! The Commercial License allows you to use the output
+    (scripts, code, strategies) for your clients or your own business without restriction.',
 
-                if (country === 'VN') return setLanguage('vi');
-                if (country === 'JP') return setLanguage('ja');
-                if (country === 'KR') return setLanguage('ko');
-            } catch (e) {
-                // Fallback to browser locale if IP detection fails
-                const locale = navigator.language.toLowerCase();
-                if (locale.startsWith('vi')) return setLanguage('vi');
-                if (locale.startsWith('ja')) return setLanguage('ja');
-                if (locale.startsWith('ko')) return setLanguage('ko');
-            }
+    // New Sections
+    blog_title: 'Latest from Blog', blog_subtitle: 'Insights, updates, and tutorials from the team.',
+    comm_title: 'Join the Community', comm_desc: 'Connect with 500+ creators, share your workflows, and get direct
+    support from the developers.',
+    docs_title: 'Documentation',
+    ref_title: 'Earn 30% Commission', ref_desc: 'Love using X10? Refer other creators and earn recurring revenue.'
+    },
+    ja: {
+    flag: '🇯🇵', name: 'JP',
+    nav_home: 'ホーム', nav_products: '製品', nav_blog: 'ブログ', nav_community: 'コミュニティ', nav_docs: 'ドキュメント', nav_referrals:
+    '紹介', nav_cta: '全セット入手',
+    hero_badge: 'v2.1.2 リリース',
+    hero_title: 'AIキットで生産性を10倍に <br class="hidden md:block" /> <span class="text-primary">次世代のワークフロー</span>',
+    hero_subtitle: 'YouTube、TikTok、マーケティング、コーディングに特化した専用エージェント。',
+    btn_explore: 'キットを見る', btn_demo: 'デモを見る',
+    section_kits_title: 'X10 エコシステム', section_kits_subtitle: '5つの強力なキット。成長を加速させる。',
+    loading: '読み込み中...', get_it: '入手する',
+    footer_copy: '© 2025 X10 Creator Kits. 日本語版。',
 
-            setLanguage('en'); // Final Default
-        }
+    feat_badge: 'X10を選ぶ理由', feat_title: '強力な機能群',
+    feat_1_title: 'YouTube インテリジェンス', feat_1_desc: '高視聴維持率の台本、魅力的なタイトル、サムネイル案を数秒で生成。',
+    feat_2_title: 'TikTok バイラルエンジン', feat_2_desc: 'トレンド音源を特定し、アルゴリズムに最適化された60秒台本を生成。',
+    feat_3_title: 'マーケティング CMO', feat_3_desc: '包括的なキャンペーン計画、AIDAコピーライティング、市場トレンド分析。',
+    feat_4_title: 'コードペアプログラマー', feat_4_desc: 'React、Tailwind、Next.jsを理解するエージェントと最新のWebアプリを構築。',
+    feat_5_title: 'グローバルローカライズ', feat_5_desc: 'EN、JP、KR、VNのネイティブ品質コンテンツ生成で市場を拡大。',
+    feat_6_title: '自動ストア同期', feat_6_desc: 'BloggerとGumroadをシームレスに接続し、デジタル製品販売を自動化。',
 
-        // --- RENDER LOGIC ---
-        function renderKits() {
-            const container = document.getElementById('kits-container');
-            const loader = document.getElementById('loading-kits');
+    dive_title: 'エージェントの動作を見る', dive_subtitle: '実際に生成される生の出力をご確認ください。',
+    hiw_title: '3ステップで公開完了',
+    hiw_s1_title: '1. キットを入手', hiw_s1_desc: 'ダウンロードしてライセンスキーを有効化。月額費用なし。',
+    hiw_s2_title: '2. エージェントを実行', hiw_s2_desc: 'アイデアを入力。エージェントが研究、執筆、最適化を行います。',
+    hiw_s3_title: '3. 公開して収益化', hiw_s3_desc: 'スクリプトやコードをアップロード。エンゲージメントの急増を実感してください。',
 
-            // Hide Loader
-            if (loader) loader.style.display = 'none';
+    comp_title: 'X10のアドバンテージ', comp_h_feat: '機能', comp_h_old: '従来ての方法', comp_h_new: 'X10 ワークフロー',
+    comp_r1_1: '作成スピード', comp_r1_2: '数時間 / 数日', comp_r1_3: '数秒',
+    comp_r2_1: '言語サポート', comp_r2_2: '手動翻訳', comp_r2_3: 'EN, JP, KR, VN ネイティブ',
+    comp_r3_1: 'コスト効率', comp_r3_2: '高額なフリーランス', comp_r3_3: '~ $29 (買い切り)',
+    comp_r4_1: 'カスタマイズ', comp_r4_2: '一般的なテンプレート', comp_r4_3: '特化型エージェント',
 
-            container.innerHTML = ''; // Clear for re-render
+    testi_title: 'クリエイターの声', testi_subtitle: '150名以上のクリエイターがワークフローをアップグレードしました。',
 
-            STATIC_KITS.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "group relative bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-2xl hover:shadow-primary/10 transition duration-300 hover:-translate-y-1";
+    price_title: 'シンプルで透明な価格設定', price_sub: '一度払えばずっと使えます。月額料金はありません。',
+    price_ind_title: '個別キット', price_ind_desc: '特定の目的を持つクリエイターに最適。',
+    price_feat_1: 'ライフタイムライセンス', price_feat_2: '基本機能をすべて含む', price_feat_3: '無料アップデート (v2.x)', price_btn_browse:
+    'キットを見る',
+    price_bundle_title: 'X10 フルバンドル', price_bundle_desc: '5つのキットすべてを入手してコンテンツ制作を強化。',
+    price_feat_bundle_1: '全5つのプレミアムキット', price_feat_bundle_2: '優先サポート', price_feat_bundle_3: '独占ボーナスプロンプト',
+    price_btn_get: 'フルアクセスを入手',
 
-                card.innerHTML = `
-                    <div class="absolute top-6 right-6">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${item.color}">
-                            ${item.tag}
-                        </span>
-                    </div>
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition duration-300">
-                        ${item.icon}
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition">
-                        ${item.title}
-                    </h3>
-                    <p class="text-slate-500 mb-6 leading-relaxed line-clamp-3">
-                        ${item.desc}
-                    </p>
-                    <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                        <span class="text-2xl font-bold text-slate-800">${item.price}</span>
-                        <a href="${item.link}" target="_blank" class="flex items-center gap-2 text-primary font-semibold group-hover:translate-x-1 transition">
-                             ${i18n[currentLang].get_it} <span class="text-lg">→</span>
-                        </a>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+    faq_title: 'よくある質問',
+    faq_q1: '製品はどのように受け取りますか？', faq_a1: 'Gumroadで購入後、すぐにキットとライセンスキーが含まれたZIPファイルを受け取れます。',
+    faq_q2: 'APIキーは必要ですか？', faq_a2: 'はい、X10キットはClaude/OpenAIプラットフォーム上で動作するため、ご自身のAPIキーが必要です。コストは最小限です。',
+    faq_q3: 'クライアントワークに使用できますか？', faq_a3: 'もちろんです！商用ライセンスにより、クライアントや自社ビジネスのために自由に成果物を使用できます。',
 
-        // Init
-        document.addEventListener('DOMContentLoaded', () => {
-            detectLanguage();
-            renderKits(); // Initial Render
-        });
+    blog_title: '最新ブログ', blog_subtitle: 'チームからのインサイト、アップデート、チュートリアル。',
+    comm_title: 'コミュニティに参加', comm_desc: '500人以上のクリエイターとつながり、ワークフローを共有しましょう。',
+    docs_title: 'ドキュメント',
+    ref_title: '30%のコミッションを獲得', ref_desc: 'X10を他のクリエイターに紹介して、継続的な収益を得ましょう。'
+    },
+    ko: {
+    flag: '🇰🇷', name: 'KR',
+    nav_home: '홈', nav_products: '제품', nav_blog: '블로그', nav_community: '커뮤니티', nav_docs: '문서', nav_referrals: '추천',
+    nav_cta: '전체 번들 구매',
+    hero_badge: 'v2.1.2 출시',
+    hero_title: 'AI 키트로 <span class="text-primary">생산성 10배 향상</span> <br class="hidden md:block" /> 창작자를 위한 혁신',
+    hero_subtitle: 'YouTube, TikTok, 마케팅, 코딩을 위한 맞춤형 에이전트 및 워크플로우.',
+    btn_explore: '키트 탐색', btn_demo: '데모 보기',
+    section_kits_title: 'X10 에코시스템', section_kits_subtitle: '5가지 강력한 키트. 끊임없는 성장.',
+    loading: '로딩 중...', get_it: '구매하기',
+    footer_copy: '© 2025 X10 Creator Kits. 한국어판.',
+
+    feat_badge: '왜 X10인가?', feat_title: '강력한 기능 모음',
+    feat_1_title: 'YouTube 인텔리전스', feat_1_desc: '높은 유지율의 대본, 눈길을 끄는 제목, 썸네일 컨셉을 몇 초 만에 생성.',
+    feat_2_title: 'TikTok 바이럴 엔진', feat_2_desc: '트렌딩 사운드를 식별하고 알고리즘에 최적화된 60초 훅 기반 대본 생성.',
+    feat_3_title: '마케팅 CMO', feat_3_desc: '종합적인 캠페인 계획, AIDA 카피라이팅, 시장 트렌드 분석을 전문가처럼 수행.',
+    feat_4_title: '코드 페어 프로그래머', feat_4_desc: '클린 코드를 이해하는 React, Tailwind, Next.js 에이전트로 최신 웹 앱 구축.',
+    feat_5_title: '글로벌 로컬라이제이션', feat_5_desc: 'EN, JP, KR, VN의 원어민 수준 콘텐츠 생성으로 시장 확대.',
+    feat_6_title: '자동 스토어 동기화', feat_6_desc: 'Blogger 및 Gumroad와 원활하게 연결하여 디지털 제품 판매 자동화.',
+
+    dive_title: '에이전트 작동 확인', dive_subtitle: '실제 생성된 결과물을 직접 확인하세요.',
+    hiw_title: '3단계로 게시 완료',
+    hiw_s1_title: '1. 키트 받기', hiw_s1_desc: 'ZIP 다운로드 및 라이선스 키 활성화. 월 구독료 없음.',
+    hiw_s2_title: '2. 에이전트 실행', hiw_s2_desc: '아이디어 입력. 에이전트가 조사, 작성, 최적화를 모두 수행.',
+    hiw_s3_title: '3. 게시 및 수익화', hiw_s3_desc: '스크립트나 코드를 업로드하세요. 놀라운 참여도를 경험하세요.',
+
+    comp_title: 'X10의 장점', comp_h_feat: '기능', comp_h_old: '기존 방식', comp_h_new: 'X10 워크플로우',
+    comp_r1_1: '제작 속도', comp_r1_2: '수 시간 / 수 일', comp_r1_3: '단 몇 초',
+    comp_r2_1: '언어 지원', comp_r2_2: '수동 번역', comp_r2_3: 'EN, JP, KR, VN 원어민급',
+    comp_r3_1: '비용 효율성', comp_r3_2: '비싼 프리랜서', comp_r3_3: '~ $29 (일회성)',
+    comp_r4_1: '최적화', comp_r4_2: '일반 템플릿', comp_r4_3: '맞춤형 에이전트',
+
+    testi_title: '크리에이터 추천사', testi_subtitle: '150명 이상의 크리에이터가 선택했습니다.',
+
+    price_title: '단순하고 투명한 가격', price_sub: '한 번 결제로 평생 소유. 월 사용료 없음.',
+    price_ind_title: '개별 키트', price_ind_desc: '특정 목적을 가진 크리에이터에게 최적.',
+    price_feat_1: '평생 라이선스', price_feat_2: '모든 기본 기능', price_feat_3: '무료 업데이트 (v2.x)', price_btn_browse: '키트 보기',
+    price_bundle_title: 'X10 풀 번들', price_bundle_desc: '5가지 키트를 모두 확보하여 콘텐츠 제작 역량 강화.',
+    price_feat_bundle_1: '모든 5개 프리미엄 키트', price_feat_bundle_2: '우선 지원', price_feat_bundle_3: '독점 보너스 프롬프트',
+    price_btn_get: '전체 액세스',
+
+    faq_title: '자주 묻는 질문',
+    faq_q1: '제품은 어떻게 받나요?', faq_a1: 'Gumroad 결제 후 즉시 키트와 라이선스 키가 포함된 ZIP 파일을 받게 됩니다.',
+    faq_q2: 'API 키가 필요한가요?', faq_a2: '네, X10 키트는 Claude/OpenAI 플랫폼에서 실행되므로 고유 API 키가 필요합니다. 비용은 매우 저렴합니다.',
+    faq_q3: '클라이언트 작업에 사용할 수 있나요?', faq_a3: '물론입니다! 상업용 라이선스를 통해 클라이언트나 비즈니스를 위해 결과물을 자유롭게 사용할 수 있습니다.',
+
+    blog_title: '최신 블로그', blog_subtitle: '팀의 인사이트, 업데이트 및 튜토리얼.',
+    comm_title: '커뮤니티 참여', comm_desc: '500명 이상의 크리에이터와 연결하고 워크플로우를 공유하세요.',
+    docs_title: '문서',
+    ref_title: '30% 커미션 받기', ref_desc: 'X10을 추천하고 수익을 창출하세요.'
+    },
+    vi: {
+    flag: '🇻🇳', name: 'VI',
+    nav_home: 'Trang chủ', nav_products: 'Sản phẩm', nav_blog: 'Blog', nav_community: 'Cộng đồng', nav_docs: 'Tài liệu',
+    nav_referrals: 'Kiếm tiền', nav_cta: 'Mua Trọn Bộ',
+    hero_badge: 'Đã ra mắt v2.1.2',
+    hero_title: 'X10 Năng suất làm việc <br class="hidden md:block" /> với <span class="text-primary">Bộ AI Kit Thông
+        minh</span>',
+    hero_subtitle: 'Agent & Workflow chuyên dụng cho YouTube, TikTok, Marketing và Lập trình.',
+    btn_explore: 'Khám phá ngay', btn_demo: 'Xem Demo',
+    section_kits_title: 'Hệ sinh thái X10', section_kits_subtitle: '5 Bộ Kit mạnh mẽ. 1 Mục tiêu: Tăng trưởng bứt phá.',
+    loading: 'Đang tải danh sách...', get_it: 'Mua ngay',
+    footer_copy: '© 2025 X10 Creator Kits. Phiên bản Việt Nam.',
+
+    feat_badge: 'Tại sao chọn X10?', feat_title: 'Tính năng Mạnh mẽ',
+    feat_1_title: 'YouTube Intelligence', feat_1_desc: 'Tự động tạo kịch bản, tiêu đề hấp dẫn và ý tưởng thumbnail chỉ
+    trong vài giây.',
+    feat_2_title: 'TikTok Viral Engine', feat_2_desc: 'Xác định âm thanh xu hướng và tạo kịch bản 60 giây tối ưu cho
+    thuật toán.',
+    feat_3_title: 'Marketing CMO', feat_3_desc: 'Lập kế hoạch chiến dịch, viết nội dung AIDA quảng cáo và phân tích thị
+    trường.',
+    feat_4_title: 'Code Pair-Programmer', feat_4_desc: 'Xây dựng web với React, Tailwind và Next.js. AI viết code sạch
+    và tối ưu.',
+    feat_5_title: 'Toàn cầu hóa (Global)', feat_5_desc: 'Mở rộng thị trường với nội dung chuẩn bản xứ cho EN, JP, KR và
+    VN.',
+    feat_6_title: 'Đồng bộ Store Tự động', feat_6_desc: 'Kết nối Blogger và Gumroad để tự động hóa quy trình bán hàng
+    digital.',
+
+    dive_title: 'X10 hoạt động thế nào?', dive_subtitle: 'Đừng nghe quảng cáo. Hãy xem kết quả thực tế.',
+    hiw_title: '3 Bước để Xuất bản',
+    hiw_s1_title: '1. Tải Kit', hiw_s1_desc: 'Nhận file ZIP và key kích hoạt ngay lập tức. Mua 1 lần dùng mãi mãi.',
+    hiw_s2_title: '2. Chạy Agent', hiw_s2_desc: 'Nhập ý tưởng của bạn. AI sẽ nghiên cứu, viết và tối ưu hóa mọi thứ.',
+    hiw_s3_title: '3. Đăng bài & Kiếm tiền', hiw_s3_desc: 'Copy kết quả và đăng tải. Tận hưởng sự tăng trưởng traffic.',
+
+    comp_title: 'Lợi thế X10', comp_h_feat: 'Tính năng', comp_h_old: 'Cách cũ', comp_h_new: 'Cách của X10',
+    comp_r1_1: 'Tốc độ tạo', comp_r1_2: 'Hàng giờ / Ngày', comp_r1_3: 'Vài giây',
+    comp_r2_1: 'Đa ngôn ngữ', comp_r2_2: 'Dịch thủ công', comp_r2_3: 'Bản xứ EN, JP, KR, VN',
+    comp_r3_1: 'Hiệu quả chi phí', comp_r3_2: 'Thuê ngoài đắt đỏ', comp_r3_3: '~ $29 (Mua 1 lần)',
+    comp_r4_1: 'Tùy biến', comp_r4_2: 'Mẫu chung chung', comp_r4_3: 'Agent chuyên biệt',
+
+    testi_title: 'Người dùng nói gì?', testi_subtitle: 'Hơn 150+ creators đã nâng cấp quy trình làm việc.',
+
+    price_title: 'Bảng giá Đơn giản', price_sub: 'Thanh toán 1 lần, sở hữu trọn đời. Không phí hàng tháng.',
+    price_ind_title: 'Bộ Kit Lẻ', price_ind_desc: 'Dành cho người mới bắt đầu tập trung vào 1 mảng.',
+    price_feat_1: 'Bản quyền trọn đời', price_feat_2: 'Tính năng cơ bản', price_feat_3: 'Update miễn phí (v2.x)',
+    price_btn_browse: 'Xem các Kit',
+    price_bundle_title: 'Trọn bộ X10 Bundle', price_bundle_desc: 'Sở hữu cả 5 bộ Kit để trở thành Content Master.',
+    price_feat_bundle_1: 'Cả 5 Premium Kits', price_feat_bundle_2: 'Hỗ trợ ưu tiên', price_feat_bundle_3: 'Tặng kèm
+    Prompts', price_btn_get: 'Mua Trọn Bộ',
+
+    faq_title: 'Câu hỏi thường gặp',
+    faq_q1: 'Tôi nhận sản phẩm thế nào?', faq_a1: 'Sau khi thanh toán qua Gumroad, bạn nhận ngay file ZIP chứa Kit và
+    License Key.',
+    faq_q2: 'Tôi có cần API Key không?', faq_a2: 'Có, X10 Kits chạy trên nền tảng Claude/OpenAI nên bạn cần API Key
+    riêng. Chi phí rất rẻ.',
+    faq_q3: 'Dùng cho khách hàng được không?', faq_a3: 'Thoải mái! License cho phép bạn dùng thành phẩm để bán dịch vụ
+    cho khách hàng.',
+
+    blog_title: 'Bài viết mới nhất', blog_subtitle: 'Kiến thức, update và hướng dẫn từ đội ngũ phát triển.',
+    comm_title: 'Tham gia Cộng đồng', comm_desc: 'Kết nối với 500+ creators, chia sẻ workflow và nhận hỗ trợ trực
+    tiếp.',
+    docs_title: 'Tài liệu',
+    ref_title: 'Nhận 30% Hoa hồng', ref_desc: 'Giới thiệu X10 cho bạn bè và nhận doanh thu thụ động trọn đời.'
+    }
+    };
+
+    let currentLang = 'en';
+
+    // --- STATIC DATA ---
+    const STATIC_KITS = [
+    {
+    title: "YouTube Kit",
+    desc: "Dominate YouTube with AI agents that generate high-retention scripts, eye-catching thumbnails, and
+    SEO-optimized titles. Includes 3 unique agents.",
+    icon: "📺",
+    price: "$29",
+    tag: "Best Seller",
+    color: "bg-red-100 text-red-600",
+    link: "https://ksmartcomes.gumroad.com/l/youtube-kit" // Replace with actual product link
+    },
+    {
+    title: "TikTok Kit",
+    desc: "Go viral faster. Analyze trends, generate 60s hook-heavy scripts, and find the perfect audio for your next
+    TikTok or Reel.",
+    icon: "🎵",
+    price: "$19",
+    tag: "Trending",
+    color: "bg-pink-100 text-pink-600",
+    link: "https://ksmartcomes.gumroad.com/l/tiktok-kit"
+    },
+    {
+    title: "Marketing Kit",
+    desc: "Your virtual CMO. Plan campaigns, write persuasive copy (AIDA, PAS), and analyze competitors effortlessly.",
+    icon: "🚀",
+    price: "$39",
+    tag: "Essential",
+    color: "bg-blue-100 text-blue-600",
+    link: "https://ksmartcomes.gumroad.com/l/marketing-kit"
+    },
+    {
+    title: "Engineer Kit",
+    desc: "Code 10x faster. A pair programmer that knows React, Tailwind, and Clean Code principles. Generates full
+    components.",
+    icon: "💻",
+    price: "$49",
+    tag: "Pro Choice",
+    color: "bg-indigo-100 text-indigo-600",
+    link: "https://ksmartcomes.gumroad.com/l/engineer-kit"
+    },
+    {
+    title: "Brand Kit",
+    desc: "Build a memorable personal brand. Define your voice, create a content calendar, and engage your audience
+    consistently.",
+    icon: "🌟",
+    price: "$25",
+    tag: "New",
+    color: "bg-yellow-100 text-yellow-600",
+    link: "https://ksmartcomes.gumroad.com/l/brand-kit"
+    }
+    ];
+
+    // --- DEMO CONTENT DATA ---
+    const DEMO_DATA = {
+    youtube: {
+    agent: "@agent_youtube (Claude 3.5 Sonnet)",
+    messages: [
+    { role: 'user', text: "Tôi muốn làm video về 'Cách học AI cho người mới'. Hãy viết giúp tôi Hook 15s đầu tiên." },
+    { role: 'ai', text: "Tuyệt vời. Đây là 3 phương án Hook giữ chân người xem cao nhất:\n\n**Option 1 (Fear Of Missing
+    Out):**\n'Nếu bạn nghĩ học AI cần phải biết code, bạn đang mất đi cơ hội kiếm tiền lớn nhất năm 2025. Đây là lộ
+    trình 3 bước dành cho người không biết gì về công nghệ...'\n\n**Option 2 (Authority):**\n'Tôi đã giúp 500 người từ
+    con số 0 trở thành chuyên gia Prompt Engineering chỉ trong 30 ngày. Bí mật không nằm ở công cụ, mà nằm ở tư duy
+    này...'\n\n**Option 3 (Curiosity):**\n'Đừng học Python. Đừng học Machine Learning. Nếu bạn muốn dùng AI để tăng hiệu
+    suất x10 lần ngay lập tức, hãy bắt đầu từ thứ mà 90% mọi người đang bỏ qua...'" }
+    ]
+    },
+    tiktok: {
+    agent: "@agent_tiktok (Claude 3.5 Haiku)",
+    messages: [
+    { role: 'user', text: "Tìm cho tôi 1 trend đang hot và viết kịch bản biến tôi thành chuyên gia trong trend đó." },
+    { role: 'ai', text: "**Trend Detected:** 'Silent Review' (Review không nói, chỉ dùng biểu cảm ASMR).\n\n**Kịch bản
+    60s:**\n[0-5s] (Hình ảnh bạn cầm 1 cuốn sách về AI, mặt rất nghiêm trọng. Âm thanh: tiếng lật trang sách
+    'Roẹt')\n[5-15s] (Bạn gõ phím máy tính cực nhanh, mắt sáng lên như tìm ra chân lý. Hiệu ứng âm thanh: Tiếng gõ phím
+    cơ 'Tách tách tách')\n[15-30s] (Show màn hình kết quả Claude viết code xong trong 30s. Bạn nhếch mép cười, giơ ngón
+    tay cái 👍)\n[30-45s] (Text hiện lên màn hình: 'Tại sao phải code 8 tiếng khi AI làm trong 30s? Link bio để lấy
+    Prompts'. Nhạc nền: Trending upbeat phonk)\n\n**Hashtag:** #AI #LearnOnTikTok #SilentReview #Productivity" }
+    ]
+    },
+    marketing: {
+    agent: "@agent_marketing (Claude 3.5 Sonnet)",
+    messages: [
+    { role: 'user', text: "Phân tích đối thủ X và đưa ra chiến lược USP." },
+    { role: 'ai', text: "**Phân tích nhanh:** Đối thủ X đang tập trung vào 'Giá rẻ' và 'Nhanh'. Điểm yếu của họ là 'Chất
+    lượng nội dung chung chung (Generic)'.\n\n**Chiến lược USP cho bạn:** 'Hyper-Personalization' (Cá nhân hóa tột
+    độ).\n\n**Tagline đề xuất:** 'Không chỉ viết nhanh, X10 viết như chính BẠN.'\n\n**Kế hoạch hành động:**\n1. Tạo
+    chiến dịch so sánh: 'Bài viết 0.5$ (Đối thủ) vs Bài viết X10 (Có hồn)'.\n2. Đánh vào nỗi đau: 'Khách hàng chán ngấy
+    nội dung rác do AI viết vội. Họ cần sự sâu sắc.'\n3. Offer: Dùng thử agent 'Personal Brand' để clone giọng văn của
+    chính mình." }
+    ]
+    },
+    code: {
+    agent: "@agent_engineer (Claude 3.5 Sonnet)",
+    messages: [
+    { role: 'user', text: "Tạo một Component Card sản phẩm bằng React + Tailwind, có hiệu ứng hover glassmorphism." },
+    { role: 'ai', text: "Đây là component React 100% clean code, copy-paste là chạy:\n\n```jsx\nexport default function
+    ProductCard({ title, price }) {\n return (\n <div className=\"group relative p-6 rounded-2xl bg-white/10
+        backdrop-blur-md border border-white/20 hover:border-pink-500/50 transition-all duration-300
+        hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]\">\n
+        <div className=\"h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-4 group-hover:scale-105
+            transition-transform duration-500\" />\n <h3 className=\"text-xl font-bold text-white mb-2\">{title}</h3>\n
+        <div className=\"flex justify-between items-center\">\n <span className=\"text-2xl font-bold text-transparent
+                bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600\">{price}</span>\n <button className=\"px-4
+                py-2 rounded-lg bg-white text-purple-900 font-bold hover:bg-purple-100\">Buy Now</button>\n </div>\n
+    </div>\n );\n}\n```" }
+    ]
+    }
+    };
+
+    let currentTypeTimeout;
+
+    function switchTab(tabId) {
+    // Update UI
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(`btn-${tabId}`).classList.add('active');
+
+    // Clear content
+    document.getElementById('demo-content').innerHTML = '';
+    document.getElementById('demo-agent-name').innerText = DEMO_DATA[tabId].agent;
+
+    // Start Typing Simulation
+    simulateChat(DEMO_DATA[tabId].messages);
+    }
+
+    async function simulateChat(messages) {
+    clearTimeout(currentTypeTimeout);
+    const container = document.getElementById('demo-content');
+
+    for (let msg of messages) {
+    // Formatting
+    let fmtText = msg.text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // Add Typing Bubble
+    const typingDiv = document.createElement('div');
+    typingDiv.className = `chat-bubble ${msg.role === 'user' ? 'chat-user' : 'chat-ai'} w-16`;
+    typingDiv.innerHTML = `<span class="typing-dot"></span><span class="typing-dot"></span><span
+        class="typing-dot"></span>`;
+    container.appendChild(typingDiv);
+    container.scrollTop = container.scrollHeight;
+
+    await new Promise(r => currentTypeTimeout = setTimeout(r, 800)); // Fake processing delay
+
+    // Remove typing, add real message
+    typingDiv.remove();
+
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `chat-bubble ${msg.role === 'user' ? 'chat-user' : 'chat-ai'} opacity-0
+    animate-[fade-in_0.3s_ease-out_forwards]`;
+    msgDiv.innerHTML = fmtText;
+    // Simple animation hack
+    msgDiv.style.animation = "fadeIn 0.5s forwards";
+
+    container.appendChild(msgDiv);
+    container.scrollTop = container.scrollHeight;
+
+    await new Promise(r => currentTypeTimeout = setTimeout(r, msg.role === 'user' ? 500 : 1500)); // Read delay
+    }
+    }
+
+    // --- I18N LOGIC ---
+    function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('x10_lang', lang);
+
+    // Update static elements
+    document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    if (i18n[lang][key]) {
+    el.innerHTML = i18n[lang][key];
+    }
+    });
+
+    // Special handling for HTML titles (rich text)
+    if (document.getElementById('hero-title')) {
+    document.getElementById('hero-title').innerHTML = i18n[lang].hero_title;
+    }
+
+    // Update Switcher UI
+    document.getElementById('current-flag').innerText = i18n[lang].flag;
+    document.getElementById('current-lang-name').innerText = i18n[lang].name;
+
+    // Re-render kits to update "Get it" button and loading text
+    renderKits();
+    }
+
+    async function detectLanguage() {
+    // Priority: 1. LocalStorage, 2. IP Geo (optional feature), 3. Browser Locale
+    const saved = localStorage.getItem('x10_lang');
+    if (saved) return setLanguage(saved);
+
+    try {
+    // Quick IP Check (Free & Fast)
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    const country = data.country_code;
+
+    if (country === 'VN') return setLanguage('vi');
+    if (country === 'JP') return setLanguage('ja');
+    if (country === 'KR') return setLanguage('ko');
+    } catch (e) {
+    // Fallback to browser locale if IP detection fails
+    const locale = navigator.language.toLowerCase();
+    if (locale.startsWith('vi')) return setLanguage('vi');
+    if (locale.startsWith('ja')) return setLanguage('ja');
+    if (locale.startsWith('ko')) return setLanguage('ko');
+    }
+
+    setLanguage('en'); // Final Default
+    }
+
+    // --- RENDER LOGIC ---
+    function renderKits() {
+    const container = document.getElementById('kits-container');
+    const loader = document.getElementById('loading-kits');
+
+    // Hide Loader
+    if (loader) loader.style.display = 'none';
+
+    container.innerHTML = ''; // Clear for re-render
+
+    STATIC_KITS.forEach(item => {
+    const card = document.createElement('div');
+    card.className = "group relative bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-2xl
+    hover:shadow-primary/10 transition duration-300 hover:-translate-y-1";
+
+    card.innerHTML = `
+    <div class="absolute top-6 right-6">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${item.color}">
+            ${item.tag}
+        </span>
+    </div>
+    <div
+        class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition duration-300">
+        ${item.icon}
+    </div>
+    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition">
+        ${item.title}
+    </h3>
+    <p class="text-slate-500 mb-6 leading-relaxed line-clamp-3">
+        ${item.desc}
+    </p>
+    <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+        <span class="text-2xl font-bold text-slate-800">${item.price}</span>
+        <a href="${item.link}" target="_blank"
+            class="flex items-center gap-2 text-primary font-semibold group-hover:translate-x-1 transition">
+            ${i18n[currentLang].get_it} <span class="text-lg">→</span>
+        </a>
+    </div>
+    `;
+    container.appendChild(card);
+    });
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+    detectLanguage();
+    renderKits(); // Initial Render
+    loadBlog(); // Fetch Blog Posts
+    });
     </script>
 
     <!-- Footer -->
