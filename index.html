@@ -112,6 +112,68 @@
         .animate-float {
             animation: float 3s ease-in-out infinite;
         }
+
+        /* Tabs & Chat UI */
+        .tab-btn.active {
+            background-color: #4361ee;
+            color: white;
+            border-color: #4361ee;
+        }
+
+        .chat-bubble {
+            position: relative;
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-user {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            border-bottom-right-radius: 4px;
+            margin-left: auto;
+        }
+
+        .chat-ai {
+            background-color: #eff6ff;
+            color: #1e40af;
+            border-bottom-left-radius: 4px;
+            margin-right: auto;
+        }
+
+        .typing-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #94a3b8;
+            animation: typing 1.4s infinite ease-in-out both;
+            margin: 0 2px;
+        }
+
+        .typing-dot:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes typing {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -326,8 +388,96 @@
         </div>
     </section>
 
+    <!-- Deep Dive: Experience the Agents -->
+    <section id="deep-dive" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 data-t="dive_title" class="text-3xl font-bold text-slate-900 sm:text-4xl">See the Agents in Action
+                </h2>
+                <p data-t="dive_subtitle" class="mt-4 text-lg text-slate-600">Don't just take our word for it. See the
+                    actual raw output.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="switchTab('youtube')" id="btn-youtube"
+                    class="tab-btn active px-6 py-2 rounded-full border border-slate-200 font-semibold text-slate-600 hover:bg-white hover:shadow-md transition">YouTube
+                    Agent</button>
+                <button onclick="switchTab('tiktok')" id="btn-tiktok"
+                    class="tab-btn px-6 py-2 rounded-full border border-slate-200 font-semibold text-slate-600 hover:bg-white hover:shadow-md transition">TikTok
+                    Agent</button>
+                <button onclick="switchTab('marketing')" id="btn-marketing"
+                    class="tab-btn px-6 py-2 rounded-full border border-slate-200 font-semibold text-slate-600 hover:bg-white hover:shadow-md transition">Marketing
+                    Agent</button>
+                <button onclick="switchTab('code')" id="btn-code"
+                    class="tab-btn px-6 py-2 rounded-full border border-slate-200 font-semibold text-slate-600 hover:bg-white hover:shadow-md transition">Coding
+                    Agent</button>
+            </div>
+
+            <!-- Demo Window -->
+            <div
+                class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden max-w-4xl mx-auto h-[500px] flex flex-col">
+                <!-- Mac-style Header -->
+                <div class="bg-slate-100 px-4 py-3 border-b border-slate-200 flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span id="demo-agent-name"
+                        class="ml-4 text-xs font-mono text-slate-500 font-semibold">@agent_youtube (Claude 3.5
+                        Sonnet)</span>
+                </div>
+
+                <!-- Chat Area -->
+                <div id="demo-content" class="flex-1 p-6 overflow-y-auto bg-slate-50 font-mono text-sm leading-relaxed">
+                    <!-- Dynamic Content Injected Here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 data-t="hiw_title" class="text-3xl font-bold text-slate-900">From Zero to Publish in 3 Steps</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Connector Line (Desktop) -->
+                <div class="hidden md:block absolute top-[3rem] left-[20%] right-[20%] h-1 bg-slate-100 -z-10"></div>
+
+                <!-- Step 1 -->
+                <div class="text-center group">
+                    <div
+                        class="w-24 h-24 mx-auto bg-blue-50 rounded-full flex items-center justify-center text-4xl mb-6 border-4 border-white shadow-lg group-hover:scale-110 transition">
+                        📦</div>
+                    <h3 data-t="hiw_s1_title" class="text-xl font-bold text-slate-900 mb-2">1. Get the Kit</h3>
+                    <p data-t="hiw_s1_desc" class="text-slate-500 px-4">Download the zip, activate your license key. No
+                        monthly subscriptions.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center group">
+                    <div
+                        class="w-24 h-24 mx-auto bg-purple-50 rounded-full flex items-center justify-center text-4xl mb-6 border-4 border-white shadow-lg group-hover:scale-110 transition">
+                        🤖</div>
+                    <h3 data-t="hiw_s2_title" class="text-xl font-bold text-slate-900 mb-2">2. Run the Agent</h3>
+                    <p data-t="hiw_s2_desc" class="text-slate-500 px-4">Paste your idea. The agent researches, writes,
+                        and optimizes everything.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center group">
+                    <div
+                        class="w-24 h-24 mx-auto bg-green-50 rounded-full flex items-center justify-center text-4xl mb-6 border-4 border-white shadow-lg group-hover:scale-110 transition">
+                        🚀</div>
+                    <h3 data-t="hiw_s3_title" class="text-xl font-bold text-slate-900 mb-2">3. Publish & Profit</h3>
+                    <p data-t="hiw_s3_desc" class="text-slate-500 px-4">Upload the script, code, or copy. Watch your
+                        engagement soar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Comparison Table -->
-    <section id="comparison" class="py-20 bg-white">
+    <section id="comparison" class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="text-center mb-16">
                 <h2 data-t="comp_title" class="text-3xl font-bold text-slate-900 sm:text-4xl">The X10 Advantage</h2>
@@ -394,6 +544,62 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Social Proof) -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-t="testi_title" class="text-3xl font-bold text-slate-900">What Creators are Saying</h2>
+                <p data-t="testi_subtitle" class="mt-4 text-lg text-slate-600">Join 150+ creators who upgraded their
+                    workflow.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- User 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <p class="text-slate-600 italic mb-6">"I used to spend 4 hours writing a script. With the YouTube
+                        Agent, it takes 5 minutes. The retention rate went up by 15%."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600">
+                            JD</div>
+                        <div>
+                            <p class="font-bold text-slate-900">John Doe</p>
+                            <p class="text-xs text-slate-500">Tech YouTuber (150K Subs)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- User 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <p class="text-slate-600 italic mb-6">"The Marketing Kit is insane. It wrote an entire landing page
+                        copy for me in one go. Conversion rate doubled."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center font-bold text-pink-600">
+                            AL</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Alice Lee</p>
+                            <p class="text-xs text-slate-500">SaaS Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- User 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <p class="text-slate-600 italic mb-6">"As a junior dev, the Engineer Kit helps me structure my React
+                        components perfectly. It teaches me while it codes."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center font-bold text-green-600">
+                            MK</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Minh Khoi</p>
+                            <p class="text-xs text-slate-500">Frontend Developer</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -516,7 +722,7 @@
                 hero_subtitle: 'Specialized Agents & Workflows designed for YouTube, TikTok, Marketing, and Coding.',
                 btn_explore: 'Explore Kits', btn_demo: 'Watch Demo',
                 section_kits_title: 'The X10 Ecosystem', section_kits_subtitle: '5 Powerful Kits. 1 Goal: Unstoppable Growth.',
-                loading: 'Loading Kits from Store...', get_it: 'Get it',
+                loading: 'Loading Kits...', get_it: 'Get it',
                 footer_copy: '© 2025 X10 Creator Kits. Global Edition. All rights reserved.',
                 // Features
                 feat_badge: 'Why Choose X10?', feat_title: 'Power-Packed Capabilities',
@@ -552,7 +758,7 @@
                 hero_subtitle: 'YouTube、TikTok、マーケティング、コーディングに特化した専用エージェント。',
                 btn_explore: 'キットを見る', btn_demo: 'デモを見る',
                 section_kits_title: 'X10 エコシステム', section_kits_subtitle: '5つの強力なキット。成長を加速させる。',
-                loading: 'ストアから読み込み中...', get_it: '入手する',
+                loading: '読み込み中...', get_it: '入手する',
                 footer_copy: '© 2025 X10 Creator Kits. 日本語版。',
                 feat_badge: 'X10を選ぶ理由', feat_title: '強力な機能群',
                 feat_1_title: 'YouTube インテリジェンス', feat_1_desc: '高視聴維持率の台本、魅力的なタイトル、サムネイル案を数秒で生成。',
@@ -570,7 +776,7 @@
                 price_ind_title: '個別キット', price_ind_desc: '特定の目的を持つクリエイターに最適。',
                 price_feat_1: 'ライフタイムライセンス', price_feat_2: '基本機能をすべて含む', price_feat_3: '無料アップデート (v2.x)', price_btn_browse: 'キットを見る',
                 price_bundle_title: 'X10 フルバンドル', price_bundle_desc: '5つのキットすべてを入手してコンテンツ制作を強化。',
-                price_feat_bundle_1: '全5つのプレミアムキット', price_feat_bundle_2: '優先サポート', price_feat_bundle_3: '限定ボーナスプロンプト', price_btn_get: 'フルアクセスを入手',
+                price_feat_bundle_1: '全5つのプレミアムキット', price_feat_bundle_2: '優先サポート', price_feat_bundle_3: '独占ボーナスプロンプト', price_btn_get: 'フルアクセスを入手',
                 faq_title: 'よくある質問',
                 faq_q1: '製品はどのように受け取りますか？', faq_a1: 'Gumroadで購入後、すぐにキットとライセンスキーが含まれたZIPファイルを受け取れます。',
                 faq_q2: 'APIキーは必要ですか？', faq_a2: 'はい、X10キットはClaude/OpenAIプラットフォーム上で動作するため、ご自身のAPIキーが必要です。コストは最小限です。',
@@ -584,7 +790,7 @@
                 hero_subtitle: 'YouTube, TikTok, 마케팅, 코딩을 위한 맞춤형 에이전트 및 워크플로우.',
                 btn_explore: '키트 탐색', btn_demo: '데모 보기',
                 section_kits_title: 'X10 에코시스템', section_kits_subtitle: '5가지 강력한 키트. 끊임없는 성장.',
-                loading: '스토어에서 로딩 중...', get_it: '구매하기',
+                loading: '로딩 중...', get_it: '구매하기',
                 footer_copy: '© 2025 X10 Creator Kits. 한국어판.',
                 feat_badge: '왜 X10인가?', feat_title: '강력한 기능 모음',
                 feat_1_title: 'YouTube 인텔리전스', feat_1_desc: '높은 유지율의 대본, 눈길을 끄는 제목, 썸네일 컨셉을 몇 초 만에 생성.',
@@ -616,7 +822,7 @@
                 hero_subtitle: 'Agent & Workflow chuyên dụng cho YouTube, TikTok, Marketing và Lập trình.',
                 btn_explore: 'Khám phá ngay', btn_demo: 'Xem Demo',
                 section_kits_title: 'Hệ sinh thái X10', section_kits_subtitle: '5 Bộ Kit mạnh mẽ. 1 Mục tiêu: Tăng trưởng bứt phá.',
-                loading: 'Đang tải sản phẩm...', get_it: 'Mua ngay',
+                loading: 'Đang tải danh sách...', get_it: 'Mua ngay',
                 footer_copy: '© 2025 X10 Creator Kits. Phiên bản Việt Nam.',
                 feat_badge: 'Tại sao chọn X10?', feat_title: 'Tính năng Mạnh mẽ',
                 feat_1_title: 'YouTube Intelligence', feat_1_desc: 'Tự động tạo kịch bản, tiêu đề hấp dẫn và ý tưởng thumbnail chỉ trong vài giây.',
@@ -644,6 +850,135 @@
 
         let currentLang = 'en';
 
+        // --- STATIC DATA ---
+        const STATIC_KITS = [
+            {
+                title: "YouTube Kit",
+                desc: "Dominate YouTube with AI agents that generate high-retention scripts, eye-catching thumbnails, and SEO-optimized titles. Includes 3 unique agents.",
+                icon: "📺",
+                price: "$29",
+                tag: "Best Seller",
+                color: "bg-red-100 text-red-600",
+                link: "https://ksmartcomes.gumroad.com/l/youtube-kit" // Replace with actual product link
+            },
+            {
+                title: "TikTok Kit",
+                desc: "Go viral faster. Analyze trends, generate 60s hook-heavy scripts, and find the perfect audio for your next TikTok or Reel.",
+                icon: "🎵",
+                price: "$19",
+                tag: "Trending",
+                color: "bg-pink-100 text-pink-600",
+                link: "https://ksmartcomes.gumroad.com/l/tiktok-kit"
+            },
+            {
+                title: "Marketing Kit",
+                desc: "Your virtual CMO. Plan campaigns, write persuasive copy (AIDA, PAS), and analyze competitors effortlessly.",
+                icon: "🚀",
+                price: "$39",
+                tag: "Essential",
+                color: "bg-blue-100 text-blue-600",
+                link: "https://ksmartcomes.gumroad.com/l/marketing-kit"
+            },
+            {
+                title: "Engineer Kit",
+                desc: "Code 10x faster. A pair programmer that knows React, Tailwind, and Clean Code principles. Generates full components.",
+                icon: "💻",
+                price: "$49",
+                tag: "Pro Choice",
+                color: "bg-indigo-100 text-indigo-600",
+                link: "https://ksmartcomes.gumroad.com/l/engineer-kit"
+            },
+            {
+                title: "Brand Kit",
+                desc: "Build a memorable personal brand. Define your voice, create a content calendar, and engage your audience consistently.",
+                icon: "🌟",
+                price: "$25",
+                tag: "New",
+                color: "bg-yellow-100 text-yellow-600",
+                link: "https://ksmartcomes.gumroad.com/l/brand-kit"
+            }
+        ];
+
+        // --- DEMO CONTENT DATA ---
+        const DEMO_DATA = {
+            youtube: {
+                agent: "@agent_youtube (Claude 3.5 Sonnet)",
+                messages: [
+                    { role: 'user', text: "Tôi muốn làm video về 'Cách học AI cho người mới'. Hãy viết giúp tôi Hook 15s đầu tiên." },
+                    { role: 'ai', text: "Tuyệt vời. Đây là 3 phương án Hook giữ chân người xem cao nhất:\n\n**Option 1 (Fear Of Missing Out):**\n'Nếu bạn nghĩ học AI cần phải biết code, bạn đang mất đi cơ hội kiếm tiền lớn nhất năm 2025. Đây là lộ trình 3 bước dành cho người không biết gì về công nghệ...'\n\n**Option 2 (Authority):**\n'Tôi đã giúp 500 người từ con số 0 trở thành chuyên gia Prompt Engineering chỉ trong 30 ngày. Bí mật không nằm ở công cụ, mà nằm ở tư duy này...'\n\n**Option 3 (Curiosity):**\n'Đừng học Python. Đừng học Machine Learning. Nếu bạn muốn dùng AI để tăng hiệu suất x10 lần ngay lập tức, hãy bắt đầu từ thứ mà 90% mọi người đang bỏ qua...'" }
+                ]
+            },
+            tiktok: {
+                agent: "@agent_tiktok (Claude 3.5 Haiku)",
+                messages: [
+                    { role: 'user', text: "Tìm cho tôi 1 trend đang hot và viết kịch bản biến tôi thành chuyên gia trong trend đó." },
+                    { role: 'ai', text: "**Trend Detected:** 'Silent Review' (Review không nói, chỉ dùng biểu cảm ASMR).\n\n**Kịch bản 60s:**\n[0-5s] (Hình ảnh bạn cầm 1 cuốn sách về AI, mặt rất nghiêm trọng. Âm thanh: tiếng lật trang sách 'Roẹt')\n[5-15s] (Bạn gõ phím máy tính cực nhanh, mắt sáng lên như tìm ra chân lý. Hiệu ứng âm thanh: Tiếng gõ phím cơ 'Tách tách tách')\n[15-30s] (Show màn hình kết quả Claude viết code xong trong 30s. Bạn nhếch mép cười, giơ ngón tay cái 👍)\n[30-45s] (Text hiện lên màn hình: 'Tại sao phải code 8 tiếng khi AI làm trong 30s? Link bio để lấy Prompts'. Nhạc nền: Trending upbeat phonk)\n\n**Hashtag:** #AI #LearnOnTikTok #SilentReview #Productivity" }
+                ]
+            },
+            marketing: {
+                agent: "@agent_marketing (Claude 3.5 Sonnet)",
+                messages: [
+                    { role: 'user', text: "Phân tích đối thủ X và đưa ra chiến lược USP." },
+                    { role: 'ai', text: "**Phân tích nhanh:** Đối thủ X đang tập trung vào 'Giá rẻ' và 'Nhanh'. Điểm yếu của họ là 'Chất lượng nội dung chung chung (Generic)'.\n\n**Chiến lược USP cho bạn:** 'Hyper-Personalization' (Cá nhân hóa tột độ).\n\n**Tagline đề xuất:** 'Không chỉ viết nhanh, X10 viết như chính BẠN.'\n\n**Kế hoạch hành động:**\n1. Tạo chiến dịch so sánh: 'Bài viết 0.5$ (Đối thủ) vs Bài viết X10 (Có hồn)'.\n2. Đánh vào nỗi đau: 'Khách hàng chán ngấy nội dung rác do AI viết vội. Họ cần sự sâu sắc.'\n3. Offer: Dùng thử agent 'Personal Brand' để clone giọng văn của chính mình." }
+                ]
+            },
+            code: {
+                agent: "@agent_engineer (Claude 3.5 Sonnet)",
+                messages: [
+                    { role: 'user', text: "Tạo một Component Card sản phẩm bằng React + Tailwind, có hiệu ứng hover glassmorphism." },
+                    { role: 'ai', text: "Đây là component React 100% clean code, copy-paste là chạy:\n\n```jsx\nexport default function ProductCard({ title, price }) {\n  return (\n    <div className=\"group relative p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]\">\n      <div className=\"h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500\" />\n      <h3 className=\"text-xl font-bold text-white mb-2\">{title}</h3>\n      <div className=\"flex justify-between items-center\">\n         <span className=\"text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600\">{price}</span>\n         <button className=\"px-4 py-2 rounded-lg bg-white text-purple-900 font-bold hover:bg-purple-100\">Buy Now</button>\n      </div>\n    </div>\n  );\n}\n```" }
+                ]
+            }
+        };
+
+        let currentTypeTimeout;
+
+        function switchTab(tabId) {
+            // Update UI
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${tabId}`).classList.add('active');
+
+            // Clear content
+            document.getElementById('demo-content').innerHTML = '';
+            document.getElementById('demo-agent-name').innerText = DEMO_DATA[tabId].agent;
+
+            // Start Typing Simulation
+            simulateChat(DEMO_DATA[tabId].messages);
+        }
+
+        async function simulateChat(messages) {
+            clearTimeout(currentTypeTimeout);
+            const container = document.getElementById('demo-content');
+
+            for (let msg of messages) {
+                // Formatting
+                let fmtText = msg.text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+                // Add Typing Bubble
+                const typingDiv = document.createElement('div');
+                typingDiv.className = `chat-bubble ${msg.role === 'user' ? 'chat-user' : 'chat-ai'} w-16`;
+                typingDiv.innerHTML = `<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>`;
+                container.appendChild(typingDiv);
+                container.scrollTop = container.scrollHeight;
+
+                await new Promise(r => currentTypeTimeout = setTimeout(r, 800)); // Fake processing delay
+
+                // Remove typing, add real message
+                typingDiv.remove();
+
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `chat-bubble ${msg.role === 'user' ? 'chat-user' : 'chat-ai'} opacity-0 animate-[fade-in_0.3s_ease-out_forwards]`;
+                msgDiv.innerHTML = fmtText;
+                // Simple animation hack
+                msgDiv.style.animation = "fadeIn 0.5s forwards";
+
+                container.appendChild(msgDiv);
+                container.scrollTop = container.scrollHeight;
+
+                await new Promise(r => currentTypeTimeout = setTimeout(r, msg.role === 'user' ? 500 : 1500)); // Read delay
+            }
+        }
+
         // --- I18N LOGIC ---
         function setLanguage(lang) {
             currentLang = lang;
@@ -667,7 +1002,7 @@
             document.getElementById('current-lang-name').innerText = i18n[lang].name;
 
             // Re-render kits to update "Get it" button and loading text
-            loadKits();
+            renderKits();
         }
 
         async function detectLanguage() {
@@ -695,68 +1030,51 @@
             setLanguage('en'); // Final Default
         }
 
-        // --- BLOGGER LOADING LOGIC ---
-        const BLOG_URL = 'https://ksmartcomes.blogspot.com';
-
-        async function loadKits() {
+        // --- RENDER LOGIC ---
+        function renderKits() {
             const container = document.getElementById('kits-container');
             const loader = document.getElementById('loading-kits');
-            container.innerHTML = ''; // Clear for re-render if language changes
 
-            try {
-                const entries = await BloggerCore.fetchFeed(BLOG_URL);
-                if (entries.length === 0) {
-                    loader.innerHTML = `<p class="text-slate-500">No kits found.</p>`;
-                    return;
-                }
-                loader.style.display = 'none';
+            // Hide Loader
+            if (loader) loader.style.display = 'none';
 
-                entries.forEach(entry => {
-                    const content = entry.content.$t;
-                    const item = {
-                        title: entry.title.$t,
-                        desc: BloggerCore.extractDescription(content, entry.summary?.$t),
-                        icon: BloggerCore.extractMeta(content, 'ICON') || '📦',
-                        price: BloggerCore.extractMeta(content, 'PRICE') || '$0',
-                        tag: BloggerCore.extractMeta(content, 'TAG') || 'New',
-                        color: BloggerCore.extractMeta(content, 'COLOR') || 'bg-slate-100 text-slate-600',
-                        link: BloggerCore.extractMeta(content, 'LINK') || '#'
-                    };
+            container.innerHTML = ''; // Clear for re-render
 
-                    const card = document.createElement('div');
-                    card.className = "group relative bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-2xl hover:shadow-primary/10 transition duration-300 hover:-translate-y-1";
-                    card.innerHTML = `
-                        <div class="absolute top-6 right-6">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${item.color}">
-                                ${item.tag}
-                            </span>
-                        </div>
-                        <div class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition duration-300">
-                            ${item.icon}
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition">
-                            ${item.title}
-                        </h3>
-                        <p class="text-slate-500 mb-6 leading-relaxed line-clamp-3">
-                            ${item.desc}
-                        </p>
-                        <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                            <span class="text-2xl font-bold text-slate-800">${item.price}</span>
-                            <a href="${item.link}" target="_blank" class="flex items-center gap-2 text-primary font-semibold group-hover:translate-x-1 transition">
-                                ${i18n[currentLang].get_it} <span class="text-lg">→</span>
-                            </a>
-                        </div>
-                    `;
-                    container.appendChild(card);
-                });
-            } catch (error) {
-                console.error(error);
-                loader.innerHTML = `<p class="text-red-500">Store Connection Error.</p>`;
-            }
+            STATIC_KITS.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "group relative bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-2xl hover:shadow-primary/10 transition duration-300 hover:-translate-y-1";
+
+                card.innerHTML = `
+                    <div class="absolute top-6 right-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${item.color}">
+                            ${item.tag}
+                        </span>
+                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition duration-300">
+                        ${item.icon}
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition">
+                        ${item.title}
+                    </h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed line-clamp-3">
+                        ${item.desc}
+                    </p>
+                    <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+                        <span class="text-2xl font-bold text-slate-800">${item.price}</span>
+                        <a href="${item.link}" target="_blank" class="flex items-center gap-2 text-primary font-semibold group-hover:translate-x-1 transition">
+                             ${i18n[currentLang].get_it} <span class="text-lg">→</span>
+                        </a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
         }
 
         // Init
-        document.addEventListener('DOMContentLoaded', detectLanguage);
+        document.addEventListener('DOMContentLoaded', () => {
+            detectLanguage();
+            renderKits(); // Initial Render
+        });
     </script>
 
     <!-- Footer -->
