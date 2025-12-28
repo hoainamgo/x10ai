@@ -46,7 +46,7 @@
 <body class="bg-light text-slate-800 font-sans antialiased flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass-panel shadow-sm">
+    <nav class="fixed w-full z-50 glass-panel shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -58,11 +58,53 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-sm font-medium hover:text-primary transition">Home</a>
-                    <a href="index.html#kits" class="text-sm font-medium hover:text-primary transition">Products</a>
+
+                    <!-- Products Dropdown -->
+                    <div class="relative group h-16 flex items-center">
+                        <button class="text-sm font-medium hover:text-primary transition flex items-center gap-1">
+                            <span>Products</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-12 left-0 w-64 bg-white border border-slate-100 shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 p-2 z-[60]">
+                            <a href="index.html#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">YouTube Kit</span>
+                                <span class="text-xs text-slate-400">Viral Scripts & Thumbnails</span>
+                            </a>
+                            <a href="index.html#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">TikTok Kit</span>
+                                <span class="text-xs text-slate-400">Trend Hunter & Scripts</span>
+                            </a>
+                            <a href="index.html#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">Marketing Kit</span>
+                                <span class="text-xs text-slate-400">Campaigns & Copywriting</span>
+                            </a>
+                            <a href="index.html#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">Engineer Kit</span>
+                                <span class="text-xs text-slate-400">Coding Pair-Programmer</span>
+                            </a>
+                            <a href="index.html#kits"
+                                class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg">
+                                <span class="font-bold block">Brand Kit</span>
+                                <span class="text-xs text-slate-400">Personal Branding & Voice</span>
+                            </a>
+                        </div>
+                    </div>
+
                     <a href="blog.html" class="text-sm font-bold text-primary transition">Blog</a>
                     <a href="index.html#community"
                         class="text-sm font-medium hover:text-primary transition">Community</a>
                     <a href="index.html#docs" class="text-sm font-medium hover:text-primary transition">Docs</a>
+                    <a href="index.html#referrals"
+                        class="text-sm font-medium hover:text-primary transition">Referrals</a>
                 </div>
 
                 <!-- CTA -->
