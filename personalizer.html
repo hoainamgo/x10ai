@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-t="page_title">Personalizer Kit - X10 Creator Kits</title>
+    <meta name="description" data-t="page_desc"
+        content="Create your Marketing Digital Twin. Scale your personal brand without burning out.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4361ee',
+                        secondary: '#3f37c9',
+                        accent: '#f72585',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#0f0f23] text-white font-sans antialiased">
+
+    <!-- Shared Header -->
+    <div data-component="header"></div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-[#0f0f23] to-pink-900/20"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text Content -->
+                <div>
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/[0.05] border border-white/10 rounded-full px-3 py-1.5 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <span data-kit="badge" class="text-xs font-medium text-white/70">Marketing Edition</span>
+                    </div>
+
+                    <!-- Main Title -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                        <span data-kit="name"
+                            class="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                            Personalizer Kit
+                        </span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p data-kit="heroDesc" class="text-lg md:text-xl text-white/60 mb-8">
+                        You are the bottleneck. Clone your best marketing traits—your voice, your strategy, your taste.
+                        Scale from 1 exhausted marketer to a team of 10 tireless clones.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#pricing"
+                            class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-orange-400 text-slate-900 font-bold text-base hover:from-amber-300 hover:to-orange-300 transition-all shadow-lg shadow-orange-500/20">
+                            <span data-kit="ctaText">Clone Yourself Now</span> — <span data-kit="price">$9</span>
+                        </a>
+                        <a href="#agents"
+                            class="px-8 py-3.5 rounded-xl bg-white/[0.05] border border-white/10 text-white font-medium hover:bg-white/10 transition">
+                            <span data-t="kit_cta_see">See What's Inside</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust badges -->
+                    <div class="flex flex-wrap gap-6 text-white/40 text-xs">
+                        <span>✓ <span data-t="trust_1">Lifetime Access</span></span>
+                        <span>✓ <span data-t="trust_2">Free Updates</span></span>
+                        <span>✓ <span data-t="trust_3">Works with Claude/GPT</span></span>
+                    </div>
+                </div>
+
+                <!-- Right: Hero Image -->
+                <div class="hidden lg:flex justify-center items-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/20 to-pink-500/20 blur-3xl"></div>
+                        <!-- Placeholder Image -->
+                        <img src="assets/personalizer-hero.png" alt="Personalizer Kit Digital Twin"
+                            class="relative rounded-2xl shadow-2xl w-full max-w-md border-[6px] border-white/30 animate-float">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROBLEM/SOLUTION SECTION ========== -->
+    <section id="problem" class="py-16 bg-[#1a1a2e]">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 data-t="problem_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-4">
+                Why You Are Stuck (The Trap)
+            </h2>
+            <p data-t="problem_subtitle" class="text-center text-white/50 mb-10 max-w-2xl mx-auto">
+                You have brilliant ideas, but executing them feels like 'starting from scratch' every time.
+            </p>
+
+            <!-- Problem cards -->
+            <div class="grid md:grid-cols-3 gap-4 mb-10">
+                <div class="bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-3xl mb-3">📝</div>
+                    <h3 data-t="problem_1_title" class="font-semibold text-white mb-2">Writer's Block</h3>
+                    <p data-t="problem_1_desc" class="text-sm text-white/50">Staring at a blank page because AI doesn't
+                        know your context.</p>
+                </div>
+                <div class="bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-3xl mb-3">🤖</div>
+                    <h3 data-t="problem_2_title" class="font-semibold text-white mb-2">Generic AI Voice</h3>
+                    <p data-t="problem_2_desc" class="text-sm text-white/50">"Delve", "Tapestry", "Landscape" - AI
+                        sounds fake and robotic.</p>
+                </div>
+                <div class="bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-3xl mb-3">😫</div>
+                    <h3 data-t="problem_3_title" class="font-semibold text-white mb-2">Endless Editing</h3>
+                    <p data-t="problem_3_desc" class="text-sm text-white/50">You spend more time fixing AI output than
+                        just writing it yourself.</p>
+                </div>
+            </div>
+
+            <!-- Solution arrow -->
+            <div class="text-center text-white/20 text-4xl mb-10">↓</div>
+
+            <!-- Solution statement -->
+            <div
+                class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl p-6 border border-purple-500/20 text-center">
+                <h3 data-t="solution_title" class="text-xl font-bold text-white mb-2">The Solution: Your Digital Twin
+                </h3>
+                <p data-t="solution_desc" class="text-white/60">Extract your "Marketing DNA" and train AI to think,
+                    write, and plan exactly like you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AI AGENTS SECTION ========== -->
+    <section id="agents" class="py-16 bg-[#0f0f23]">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 data-t="agents_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-3">
+                3 Agents That Are "YOU"
+            </h2>
+            <p data-t="agents_subtitle" class="text-center text-white/50 mb-12">
+                Cloning your strategy, your voice, and your planning capability.
+            </p>
+
+            <!-- Agents Grid -->
+            <div id="agents-container" class="grid md:grid-cols-3 gap-6">
+                <!-- Agent 1 -->
+                <div
+                    class="agent-card bg-white/[0.03] rounded-2xl p-6 border border-white/[0.08] hover:border-purple-500/30 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        🧠
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">The Strategist</h3>
+                    <p class="text-xs text-purple-300 mb-3">Idea & Angle Twin</p>
+                    <p class="text-sm text-white/50 mb-4">Brainstorms campaign angles exactly how YOU would think.
+                        Filters out 99% of generic fluff before you even see it.</p>
+                </div>
+
+                <!-- Agent 2 -->
+                <div
+                    class="agent-card bg-white/[0.03] rounded-2xl p-6 border border-white/[0.08] hover:border-pink-500/30 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        ✍️
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">The Ghostwriter</h3>
+                    <p class="text-xs text-pink-300 mb-3">Voice DNA Clone</p>
+                    <p class="text-sm text-white/50 mb-4">Writes posts, emails, and scripts in your exact tone. Trained
+                        on your best past work to capture your unique rhythm.</p>
+                </div>
+
+                <!-- Agent 3 -->
+                <div
+                    class="agent-card bg-white/[0.03] rounded-2xl p-6 border border-white/[0.08] hover:border-blue-500/30 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        📐
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">The Architect</h3>
+                    <p class="text-xs text-blue-300 mb-3">Planning Twin</p>
+                    <p class="text-sm text-white/50 mb-4">Turns raw messy ideas into actionable marketing plans,
+                        structured specifically for your workflow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section id="features" class="py-16 bg-[#1a1a2e]">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 data-t="features_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-3">
+                Features for Authentic Scaling
+            </h2>
+            <p data-t="features_subtitle" class="text-center text-white/50 mb-12">
+                Tools to keep it real while moving fast.
+            </p>
+
+            <!-- Features Grid -->
+            <div id="features-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="feature-card bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-2xl mb-3">🧬</div>
+                    <h3 class="font-semibold text-white mb-2">Voice DNA Extraction</h3>
+                    <p class="text-sm text-white/50">Decodes your unique writing style from past posts</p>
+                </div>
+                <div class="feature-card bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-2xl mb-3">💡</div>
+                    <h3 class="font-semibold text-white mb-2">Idea Cloning</h3>
+                    <p class="text-sm text-white/50">Trains AI on your specific marketing taste</p>
+                </div>
+                <div class="feature-card bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-2xl mb-3">📅</div>
+                    <h3 class="font-semibold text-white mb-2">1-Click Planner</h3>
+                    <p class="text-sm text-white/50">Generates plans that fit your personal workflow</p>
+                </div>
+                <div class="feature-card bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-2xl mb-3">🚫</div>
+                    <h3 class="font-semibold text-white mb-2">Anti-Cringe Filter</h3>
+                    <p class="text-sm text-white/50">Bans marketing fluff words you hate</p>
+                </div>
+                <div class="feature-card bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-2xl mb-3">📋</div>
+                    <h3 class="font-semibold text-white mb-2">Viral Structure Copy</h3>
+                    <p class="text-sm text-white/50">Replicates your best performing post formats</p>
+                </div>
+                <div class="feature-card bg-white/[0.03] rounded-xl p-5 border border-white/[0.05]">
+                    <div class="text-2xl mb-3">🚀</div>
+                    <h3 class="font-semibold text-white mb-2">Content Multiplier</h3>
+                    <p class="text-sm text-white/50">Turns 1 idea into 10 variations instantly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FILE STRUCTURE SECTION ========== -->
+    <section id="structure" class="py-16 bg-[#0f0f23]">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 data-t="structure_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-3">
+                📂 What You Get
+            </h2>
+            <p data-t="structure_subtitle" class="text-center text-white/50 mb-8">
+                Clean, organized file structure ready to use
+            </p>
+
+            <!-- File Tree -->
+            <div class="bg-white/[0.03] rounded-xl p-6 border border-white/[0.08] font-mono text-sm">
+                <div id="file-tree" class="text-white/70">
+                    <pre class="whitespace-pre-wrap text-green-400">
+08_Personalizer/
+├── identity/
+│   ├── voice_dna.xml        # Tone & Style Rules
+│   └── strategy_brain.xml   # How you think
+├── agents/
+│   ├── the_strategist.md    # Brainstorming Partner
+│   └── the_ghostwriter.md   # Content Creator
+└── templates/
+    ├── campaign_plan.md     # Your Planning Framework
+    └── content_calendar.csv
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMPARISON SECTION ========== -->
+    <section id="comparison" class="py-16 bg-[#1a1a2e]">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 data-t="compare_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-8">
+                Assistant vs. Digital Twin
+            </h2>
+
+            <!-- Comparison Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-white/10">
+                            <th class="text-left py-4 px-4 text-white/50 font-medium">Aspect</th>
+                            <th class="text-center py-4 px-4 text-red-400 font-medium">Junior Assistant</th>
+                            <th class="text-center py-4 px-4 text-green-400 font-medium">Your Digital Twin</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-white/70" id="comparison-table-body">
+                        <tr class="border-b border-white/[0.05]">
+                            <td class="py-4 px-4">Role</td>
+                            <td class="py-4 px-4 text-center text-red-400/70">Waits for instructions</td>
+                            <td class="py-4 px-4 text-center text-green-400">Thinks with you</td>
+                        </tr>
+                        <tr class="border-b border-white/[0.05]">
+                            <td class="py-4 px-4">Output</td>
+                            <td class="py-4 px-4 text-center text-red-400/70">Generic, Safe Ideas</td>
+                            <td class="py-4 px-4 text-center text-green-400">Bold, On-Brand Ideas</td>
+                        </tr>
+                        <tr class="border-b border-white/[0.05]">
+                            <td class="py-4 px-4">Voice</td>
+                            <td class="py-4 px-4 text-center text-red-400/70">Robotic AI Accent</td>
+                            <td class="py-4 px-4 text-center text-green-400">100% Authentic YOU</td>
+                        </tr>
+                        <tr class="border-b border-white/[0.05]">
+                            <td class="py-4 px-4">Workload</td>
+                            <td class="py-4 px-4 text-center text-red-400/70">You edit everything</td>
+                            <td class="py-4 px-4 text-center text-green-400">You just approve</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING SECTION ========== -->
+    <section id="pricing" class="py-16 bg-[#0f0f23]">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 data-t="pricing_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-3">
+                Stop Renting Your Voice
+            </h2>
+            <p data-t="pricing_subtitle" class="text-center text-white/50 mb-10">
+                Own it. Build a persona that scales.
+            </p>
+
+            <!-- Pricing Cards -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <!-- Individual Kit -->
+                <div class="bg-white/[0.03] rounded-2xl p-6 border border-white/[0.08]">
+                    <h3 data-t="pricing_kit_name" class="text-lg font-bold text-white mb-2">Personalizer Kit</h3>
+                    <div class="mb-4">
+                        <span data-t="pricing_kit_price" class="text-4xl font-bold text-white">$9</span>
+                        <span class="text-white/40 text-sm ml-2">one-time</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm text-white/70">
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span>Voice DNA
+                                Extraction</span></li>
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span>3 Digital Twin
+                                Agents</span></li>
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span>Anti-Robotic
+                                Filters</span></li>
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span>Lifetime
+                                Updates</span></li>
+                    </ul>
+                    <a href="https://ksmartcomes.gumroad.com" target="_blank"
+                        class="block w-full py-3 text-center rounded-xl bg-white/[0.05] hover:bg-white/10 border border-white/10 text-white font-medium transition">
+                        <span data-t="pricing_kit_cta">Get Personalizer Kit</span>
+                    </a>
+                </div>
+
+                <!-- Bundle Upsell -->
+                <div
+                    class="relative bg-gradient-to-b from-purple-600/20 to-pink-600/20 rounded-2xl p-6 border border-purple-500/30">
+                    <div
+                        class="absolute -top-3 right-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+                        BEST VALUE
+                    </div>
+                    <h3 data-t="pricing_bundle_name" class="text-lg font-bold text-white mb-2">Full X10 Bundle</h3>
+                    <div class="mb-4">
+                        <span data-t="pricing_bundle_price" class="text-4xl font-bold text-white">$99</span>
+                        <span class="text-white/40 text-sm line-through ml-2">$195</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm text-white/70">
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span
+                                data-t="pricing_bundle_feat_1">All 6 Kits Included</span></li>
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span
+                                data-t="pricing_bundle_feat_2">15+ AI Agents Total</span></li>
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span
+                                data-t="pricing_bundle_feat_3">50+ Templates & Workflows</span></li>
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span
+                                data-t="pricing_bundle_feat_4">Priority Support</span></li>
+                        <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> <span
+                                data-t="pricing_bundle_feat_5">All Future Kits Free</span></li>
+                    </ul>
+                    <a href="https://ksmartcomes.gumroad.com" target="_blank"
+                        class="block w-full py-3 text-center rounded-xl bg-gradient-to-r from-amber-400 to-orange-400 text-slate-900 font-bold hover:from-amber-300 hover:to-orange-300 transition">
+                        <span data-t="pricing_bundle_cta">Get Full Bundle</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section id="testimonials" class="py-16 bg-[#1a1a2e]">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 data-t="testimonials_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-3">
+                Early Adopters
+            </h2>
+            <p data-t="testimonials_subtitle" class="text-center text-white/50 mb-10">
+                Creators scaling themselves with Digital Twins
+            </p>
+
+            <!-- Testimonials Grid -->
+            <div id="testimonials-container" class="grid md:grid-cols-2 gap-6">
+                <div class="testimonial-card bg-white/[0.03] rounded-xl p-6 border border-white/[0.08]">
+                    <p data-t="testimonial_1_text" class="text-white/70 mb-4 italic">"I trained the Voice Cloner on my
+                        newsletter. Now I just drop bullet points and it writes exactly like me. Scary good."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                            D</div>
+                        <div>
+                            <p data-t="testimonial_1_name" class="font-medium text-white text-sm">David K.</p>
+                            <p data-t="testimonial_1_role" class="text-xs text-white/50">SaaS Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white/[0.03] rounded-xl p-6 border border-white/[0.08]">
+                    <p data-t="testimonial_2_text" class="text-white/70 mb-4 italic">"The Strategist agent gave me 5
+                        campaign ideas that I would have come up with on my best day. It really 'gets' my brand."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold">
+                            L</div>
+                        <div>
+                            <p data-t="testimonial_2_name" class="font-medium text-white text-sm">Linda W.</p>
+                            <p data-t="testimonial_2_role" class="text-xs text-white/50">Content Coach</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION ========== -->
+    <section id="faq" class="py-16 bg-[#0f0f23]">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 data-t="faq_title" class="text-2xl md:text-3xl font-bold text-center text-white mb-3">
+                Frequent Questions
+            </h2>
+            <p data-t="faq_subtitle" class="text-center text-white/50 mb-10">
+                About the Personalizer Kit
+            </p>
+
+            <!-- FAQ Accordion -->
+            <div id="faq-container" class="space-y-3">
+                <details class="group bg-white/[0.03] rounded-xl border border-white/[0.08] overflow-hidden">
+                    <summary
+                        class="cursor-pointer px-5 py-4 flex justify-between items-center text-white font-medium hover:bg-white/[0.02]">
+                        <span>Is this for coding tasks?</span>
+                        <span class="text-white/50 group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <div class="px-5 pb-4 text-sm text-white/60">
+                        <p>No. This kit is strictly for Marketing, Content Creation, and Strategic Planning.</p>
+                    </div>
+                </details>
+                <details class="group bg-white/[0.03] rounded-xl border border-white/[0.08] overflow-hidden">
+                    <summary
+                        class="cursor-pointer px-5 py-4 flex justify-between items-center text-white font-medium hover:bg-white/[0.02]">
+                        <span>How does it learn my voice?</span>
+                        <span class="text-white/50 group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <div class="px-5 pb-4 text-sm text-white/60">
+                        <p>You feed it your best 3-5 articles. It analyzes sentence length, vocabulary, and emotional
+                            tone to build a style guide.</p>
+                    </div>
+                </details>
+                <details class="group bg-white/[0.03] rounded-xl border border-white/[0.08] overflow-hidden">
+                    <summary
+                        class="cursor-pointer px-5 py-4 flex justify-between items-center text-white font-medium hover:bg-white/[0.02]">
+                        <span>Can my team use this?</span>
+                        <span class="text-white/50 group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <div class="px-5 pb-4 text-sm text-white/60">
+                        <p>Yes. Create a 'Founder Persona' and let your team generate content that sounds exactly like
+                            it came from you.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FINAL CTA SECTION ========== -->
+    <section id="final-cta" class="py-20 bg-gradient-to-b from-[#1a1a2e] to-[#0f0f23]">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 data-t="final_cta_title"
+                class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-300 via-pink-300 to-purple-300 bg-clip-text text-transparent mb-4">
+                Scale Yourself.
+            </h2>
+            <p data-t="final_cta_subtitle" class="text-white/50 mb-8">
+                Marketing is easier when there are 10 of you.
+            </p>
+
+            <a href="https://ksmartcomes.gumroad.com" target="_blank"
+                class="inline-block px-10 py-4 rounded-xl bg-gradient-to-r from-amber-400 to-orange-400 text-slate-900 font-bold text-lg hover:from-amber-300 hover:to-orange-300 transition-all shadow-lg shadow-orange-500/20 mb-4">
+                <span data-t="final_cta_button">Clone Yourself — $9</span>
+            </a>
+
+            <p data-t="final_cta_guarantee" class="text-white/50 text-xs mt-4">
+                15-day money-back guarantee • Instant access • Lifetime updates
+            </p>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <div data-component="footer"></div>
+
+    <!-- Components Loader -->
+    <script src="components/components.js"></script>
+
+    <!-- i18n (to be loaded) -->
+    <script src="js/i18n.js"></script>
+
+    <!-- Personalizer Content -->
+    <script src="js/content/personalizer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = localStorage.getItem('x10_lang') || 'vi';
+            if (typeof applyTranslations === 'function') applyTranslations(lang);
+
+            // Dynamic top-level override if needed (handled nicely by i18n mostly, but kit specific here)
+            // Note: Since we hardcoded English text, if user is in VI, they might see mixed content until i18n.js has all keys. 
+            // Ideally, i18n.js should contain all these new Personalizer keys. 
+            // For now, this hybrid approach gives a solid page immediately.
+
+            if (typeof PERSONALIZER_CONTENT !== 'undefined') {
+                const c = PERSONALIZER_CONTENT;
+                ['badge', 'name', 'heroDesc', 'price', 'ctaText'].forEach(key => {
+                    const elements = document.querySelectorAll(`[data-kit="${key}"]`);
+                    elements.forEach(el => {
+                        if (c[key]) el.textContent = c[key][lang] || c[key].en;
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
