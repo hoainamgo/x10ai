@@ -343,6 +343,7 @@
                     <h3 data-t="pricing_kit_name" class="text-lg font-bold text-white mb-2">Personalizer Kit</h3>
                     <div class="mb-4">
                         <span data-t="pricing_kit_price" class="text-4xl font-bold text-white">$9</span>
+                        <span data-kit="originalPrice" class="text-white/40 text-sm line-through ml-2">$29</span>
                         <span class="text-white/40 text-sm ml-2">one-time</span>
                     </div>
                     <ul class="space-y-2 mb-6 text-sm text-white/70">
@@ -529,7 +530,7 @@
 
             if (typeof PERSONALIZER_CONTENT !== 'undefined') {
                 const c = PERSONALIZER_CONTENT;
-                ['badge', 'name', 'heroDesc', 'price', 'ctaText'].forEach(key => {
+                ['badge', 'name', 'heroDesc', 'price', 'originalPrice', 'ctaText'].forEach(key => {
                     const elements = document.querySelectorAll(`[data-kit="${key}"]`);
                     elements.forEach(el => {
                         if (c[key]) el.textContent = c[key][lang] || c[key].en;
